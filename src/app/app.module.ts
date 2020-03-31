@@ -7,6 +7,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { FilterListComponent } from './components/navbar/filter-list/filter-list.component';
 import { SocialNetworksComponent } from './components/social-networks/social-networks.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { LargeDesctopComponent } from './components/navbar/large-desctop/large-desctop.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { FooterComponent } from './components/footer/footer.component';
     NavbarComponent,
     FilterListComponent,
     SocialNetworksComponent,
-    FooterComponent
+    FooterComponent,
+    LargeDesctopComponent
   ],
   imports: [
     BrowserModule,
