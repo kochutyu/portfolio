@@ -1,0 +1,28 @@
+<nav class="nav">
+  <a href="https://www.google.com.ua/" target="_blanc">
+    <div class="logo">
+      <span class="last-name">Kochut </span>
+      <span class="first-name">Yura</span>
+      <span class="portolio">portfolio</span>
+    </div>
+  </a>
+  <div class="navigation">
+    <ul class="path">
+      <a [href]="path" *ngFor="let path of paths">
+        <li>
+          {{path}}
+        </li>
+      </a>
+    </ul>
+  </div>
+  <div class="filter">
+    <img src="../../../assets/img/components/navbar/filter.png" alt="filter" class="filter-logo">
+    <ul class="filter-items">
+      <app-filter-list *ngFor="let item of filters; let i = index" [text]="item"
+        (click)="selectItemElementOfFilterWorks()"></app-filter-list>
+    </ul>
+  </div>
+  <div class="social-network">
+    <app-social-networks></app-social-networks>
+  </div>
+</nav>

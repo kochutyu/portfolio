@@ -1,0 +1,115 @@
+/* CONTENT START -------------------------------------------------
+  ==> NAVBAR_SOCIAL 
+ ==> INSTAGRAM 
+  ==> FACEBOOK 
+  ==> VIBER
+  ==> TELEGRAM
+---- CONTENT END -------------------------------------------------- */
+
+/* NAVBAR_SOCIAL */
+
+.footer-social-network {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0;
+  
+    li {
+      margin-right: 5%;
+      width: 26px;
+      height: 26px;
+      text-align: center;
+      list-style-type: none;
+      line-height: 31px;
+      transition: background-color 0.9s;
+  
+      &:last-child {
+        margin-right: 0;
+      }
+  
+      a {
+        position: relative;
+        font-size: 25px;
+        text-decoration: none;
+        transition: color 0.9s;
+      }
+  
+      &:hover a {
+        color: #ffffff;
+      }
+    }
+  }
+  
+  /* INSTAGRAM */
+  
+  .instagram {
+    border: 2px solid palevioletred;
+  
+    &:hover {
+      background-color: palevioletred;
+    }
+  
+    a {
+      top: -1px;
+      color: palevioletred;
+    }
+  }
+  
+  /* VIBER */
+  
+  .viber {
+    border: 2px solid #685ba6;
+  
+    &:hover {
+      background-color: #685ba6;
+    }
+  
+    a {
+      top: -2px;
+      color: #685ba6;
+    }
+  }
+  
+  /* FACEBOOK */
+  
+  .facebook {
+    border: 2px solid #677fb5;
+  
+    &:hover {
+      background-color: #677fb5;
+    }
+  
+    a {
+        top: -2px;
+        color: #677fb5;
+    }
+  }
+  
+  /* TELEGRAM */
+  
+  .telegram {
+    border: 2px solid #0088cc;
+  
+    &:hover {
+      background-color: #0088cc;
+    }
+  
+    a {
+      top: -1px;
+      color: #0088cc;
+    }
+  }
+
+  /* TELEGRAM */
+  
+  .linkedin {
+    border: 2px solid #1682ac;
+  
+    &:hover {
+      background-color: #1682ac;
+    }
+  
+    a {
+      top: 0;
+      color: #1682ac;
+    }
+  }
