@@ -1,0 +1,51 @@
+ .logo {
+   height: 70px;
+   color: #fff;
+   position: relative;
+   top: 12px;
+   right: 30px;
+   user-select: none;
+
+   .last-name {
+     position: absolute;
+     right: 50%;
+     transform: translate(50%);
+     font-family: 'Monoton';
+     font-size: 25px;
+     background: linear-gradient(to right, #1ab5b3, #fff);
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+     -webkit-transform: translate(50%);
+     -moz-transform: translate(50%);
+     -ms-transform: translate(50%);
+     -o-transform: translate(50%);
+   }
+
+   .first-name {
+     position: absolute;
+     right: 56%;
+     transform: translate(50%);
+     font-family: 'Monoton';
+     font-size: 25px;
+     top: 20px;
+     background: linear-gradient(to right, #fff, #1ab5b3);
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+     -webkit-transform: translate(50%);
+     -moz-transform: translate(50%);
+     -ms-transform: translate(50%);
+     -o-transform: translate(50%);
+   }
+
+   .portolio {
+     position: absolute;
+     right: 26%;
+     transform: translate(50%);
+     top: 18px;
+     font-family: 'Spicy Rice';
+     font-size: 25px;
+     background: linear-gradient(to right, #1ab5b3, #d9baba);
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+   }
+ }
