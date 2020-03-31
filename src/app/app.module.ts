@@ -8,6 +8,7 @@ import { FilterListComponent } from './components/navbar/filter-list/filter-list
 import { SocialNetworksComponent } from './components/social-networks/social-networks.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LogoComponent } from './components/navbar/logo/logo.component';
+import { LargeDesctopComponent } from './components/navbar/large-desctop/large-desctop.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { LogoComponent } from './components/navbar/logo/logo.component';
     FilterListComponent,
     SocialNetworksComponent,
     FooterComponent,
-    LogoComponent
+    LogoComponent,
+    LargeDesctopComponent
   ],
   imports: [
     BrowserModule,
