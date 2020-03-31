@@ -9,6 +9,8 @@ import { SocialNetworksComponent } from './components/social-networks/social-net
 import { FooterComponent } from './components/footer/footer.component';
 import { LogoComponent } from './components/navbar/logo/logo.component';
 import { LargeDesctopComponent } from './components/navbar/large-desctop/large-desctop.component';
+import { SmallDesctopComponent } from './components/navbar/small-desctop/small-desctop.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -18,11 +20,13 @@ import { LargeDesctopComponent } from './components/navbar/large-desctop/large-d
     SocialNetworksComponent,
     FooterComponent,
     LogoComponent,
-    LargeDesctopComponent
+    LargeDesctopComponent,
+    SmallDesctopComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

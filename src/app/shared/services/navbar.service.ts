@@ -18,7 +18,22 @@ export class NavbarService {
     'portfolio',
     'lending',
     'shop',
+    'shop',
+    'shop',
+    'shop',
+    'shop',
+    'shop',
+    'shop',
+    'shop',
+    'shop',
+    'shop',
+    'shop',
+    'shop',
   ]
+  statusOpenFilter: string = 'close';
+  toggleFilter(): void{
+    this.statusOpenFilter = this.statusOpenFilter === 'open' ? 'close' : 'open';
+  }
 
   constructor() { }
 }

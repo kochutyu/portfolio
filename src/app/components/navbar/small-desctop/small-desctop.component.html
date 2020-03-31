@@ -1,0 +1,27 @@
+<nav class="nav">
+  <a href="">
+    <app-logo></app-logo>
+  </a>
+  <div class="nav-content">
+    <div class="path">
+      <a [href]="path" *ngFor="let path of paths">
+        <li>
+          {{path}}
+        </li>
+      </a>
+    </div>
+    <div class="filter">
+      <div class="filter-img" (click)="navbarS.toggleFilter()">
+        <img src="assets/img/components/navbar/filter.png" alt="filter" class="filter-logo"
+          >
+      </div>
+
+      <ul class="filter-items" [@filter]="navbarS.statusOpenFilter">
+        <app-filter-list *ngFor="let item of filters; let i = index" [text]="item"
+          (click)="selectItemElementOfFilterWorks()" [ngClass]="{'hover': true}" ></app-filter-list>
+      </ul>
+    </div>
+  </div>
+  <!-- <div class="filter">
+  </div> -->
+</nav>
