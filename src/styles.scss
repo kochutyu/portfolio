@@ -1,6 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 
 //todo RESET STYLES
-@import "reset-styles.style.css";
+@import "style-elements/reset-styles.style.css";
 
-//todo GLOBAL STYLES ARE BELOW
+// todo FONTS
+@import "style-elements/fonts.style.css";
+
+
+//* GLOBAL STYLES ARE BELOW
+//todo scroll
+@import "style-elements/scroll.style.css";
+
