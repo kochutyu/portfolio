@@ -11,6 +11,7 @@ import { LogoComponent } from './components/navbar/logo/logo.component';
 import { LargeDesctopComponent } from './components/navbar/large-desctop/large-desctop.component';
 import { SmallDesctopComponent } from './components/navbar/small-desctop/small-desctop.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MobileTabComponent } from './components/navbar/mobile-tab/mobile-tab.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     LogoComponent,
     LargeDesctopComponent,
     SmallDesctopComponent,
+    MobileTabComponent,
   ],
   imports: [
     BrowserModule,

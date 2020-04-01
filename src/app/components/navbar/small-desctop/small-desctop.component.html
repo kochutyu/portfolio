@@ -3,13 +3,13 @@
     <app-logo></app-logo>
   </a>
   <div class="nav-content">
-    <div class="path">
+    <ul class="path">
       <a [href]="path" *ngFor="let path of paths">
         <li>
           {{path}}
         </li>
       </a>
-    </div>
+    </ul>
     <div class="filter">
       <div class="filter-img" (click)="navbarS.toggleFilter()">
         <img src="assets/img/components/navbar/filter.png" alt="filter" class="filter-logo"
