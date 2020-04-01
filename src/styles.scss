@@ -1,48 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 
-//todo RESET STYLES
-@import "style-elements/reset-styles.style.css";
-
 // todo FONTS
 @import "style-elements/fonts.style.css";
 
+//todo RESET STYLES
+@import "style-elements/reset-styles.style.css";
 
 //* GLOBAL STYLES ARE BELOW
 //todo scroll
 @import "style-elements/scroll.style.css";
-
-.mtop-25 {
-  margin-top: 25px;
-}
-
-.rights {
-  color: rgb(107, 112, 114);
-  text-align: center;
-  font-family: 'Roboto';
-  font-size: 12px;
-  user-select: none;
-}
-
-.container {
-  min-height: calc(100% - 50px);
-  width: calc(100% - 50px);
-  padding: 25px;
-  background-color: #b4b7b8;
-  .content {
-    min-height: 100vh;
-    width:inherit;
-    padding: 25px;
-    background-color: #fff;
-  }
-}
-
-// @media screen and (max-width: 1299px) {
-//   .container {
-//     width: 100%;
-//     background-color: red;
-//   }
-// }
-
 
 //todo MAXIN
 @mixin keyframes($name) {
@@ -61,4 +27,92 @@
   @keyframes #{$name} {
     @content;
   }
+}
+
+.mtop-25 {
+  margin-top: 25px;
+}
+
+.rights-author {
+  color: rgb(107, 112, 114);
+  text-align: center;
+  font-family: 'Roboto';
+  font-size: 12px;
+  user-select: none;
+}
+
+.container {
+  min-height: calc(100% - 50px);
+  width: calc(100% - 50px);
+  padding: 25px;
+  background-color: #b4b7b8;
+
+  .content {
+    min-height: 100vh;
+    width: inherit;
+    padding: 25px;
+    background-color: #fff;
+  }
+}
+
+.navbar-large-desctop,
+.navbar-mobile-tab,
+.navbar-small-desctop {
+  background-color: #2f373b;
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.02) 0%, rgba(255, 255, 255, 0.02) 100%);
+
+  color: #ffffff;
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 300;
+  text-transform: uppercase;
+  user-select: none;
+
+  &:hover {
+    cursor: pointer;
+    background-color: #1ab5b3;
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%);
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.navbar-small-desctop,
+.navbar-mobile-tab {
+  height: 70px;
+  text-align: center;
+  line-height: 70px;
+}
+
+.navbar-large-desctop {
+  width: 300px;
+  height: 62px;
+  line-height: 62px;
+  text-align: right;
+  padding-right: 20px;
+  position: relative;
+  left: -20px;
+}
+
+.navbar-small-desctop {
+  width: 100px;
+  border-right: 1px solid #fff;
+  border-left: 1px solid #fff;
+}
+
+.navbar-mobile-tab {
+  margin: 0 auto;
+  width: calc(100% - 50px);
+  border-bottom: 1px solid #fff;
+}
+
+.navbar-active {
+  background-color: #1ab5b3;
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%);
+}
+
+.outline-none{
+  outline: none;
 }

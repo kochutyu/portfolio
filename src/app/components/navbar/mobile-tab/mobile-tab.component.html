@@ -1,22 +1,26 @@
 <nav class="nav">
 
-  <a href="">
-    <app-logo></app-logo>
-  </a>
-  <div class="drop-down-menu" (click)="navbarS.toggleDropDown()">
-  </div>
-  <ul class="path" [@drop-down]="navbarS.dropDown">
-    <a [href]="path" *ngFor="let path of paths" (click)="navbarS.toggleDropDown()">
-      <li>
-        {{path}}
-      </li>
-    </a>
-    <div class="filter-img" (click)="navbarS.toggleFilter()">
-      <img src="assets/img/components/navbar/filter.png" alt="filter" class="filter-logo">
+  <a [routerLink]="['/home']" class="outline-none logo-href" (click)="navbarS.resetToggle()">
+    <div class="logo-align">
+      <app-logo class="logo-app"></app-logo>
     </div>
+  </a>
+
+  <div class="drop-down-menu" (click)="navbarS.toggleDropDown()"></div>
+
+  <ul class="path" [@drop-down]="navbarS.dropDown">
+    <li class="navbar-mobile-tab" [routerLink]="['/'+path]" routerLinkActive="navbar-active" *ngFor="let path of paths"
+      (click)="navbarS.toggleDropDown()">
+      {{path}}
+    </li>
+    <li class="filter-img" (click)="navbarS.toggleFilter()">
+      <img src="assets/img/components/navbar/filter.png" alt="filter" class="filter-logo">
+    </li>
   </ul>
+
   <ul class="path fs" [@filter]="navbarS.statusOpenFilter">
     <app-filter-list *ngFor="let item of filters; let i = index" [text]="item"
       (click)="selectItemElementOfFilterWorks()" [ngClass]="{'hover': true}"></app-filter-list>
   </ul>
+  
 </nav>

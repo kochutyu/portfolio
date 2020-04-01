@@ -8,7 +8,7 @@
   .logo-href {
     margin-left: 25px;
 
-    .logo-aligne {
+    .logo-align {
       width: 178px;
       height: 70px;
       overflow: hidden;
@@ -32,33 +32,6 @@
     }
   }
 
-  .filter {
-    line-height: 70px;
-    text-align: center;
-    // width: 100px;
-    position: relative;
-    user-select: none;
-    border-left: 1px solid #fff;
-
-
-    &::before {
-      width: 1px;
-      height: 70px;
-      background-color: #fff;
-      position: absolute;
-    }
-
-
-    .filter-items {
-      width: inherit;
-      height: 0;
-      position: absolute;
-      background-color: #242b2e;
-      overflow: hidden;
-      // overflow-y: auto;
-    }
-  }
-
   .path {
     position: absolute;
     top: 70px;
@@ -72,11 +45,10 @@
     flex-direction: column;
     user-select: none;
     overflow: hidden;
-    // overflow-y: auto;
 
     .filter-img {
       height: 70px;
-      width: 95%;
+      width: calc(100% - 50px);
       line-height: 70px;
       text-align: center;
       background-color: #2f373b;
@@ -87,34 +59,6 @@
         background-color: #fff;
       }
     }
-
-    // a {
-    //   text-decoration: none;
-    //   width: inherit;
-
-      li {
-        margin: 0 auto;
-        height: 70px;
-        width: 95%;
-        line-height: 70px;
-        text-align: center;
-        background-color: #2f373b;
-        background-image: linear-gradient(to top, rgba(0, 0, 0, 0.02) 0%, rgba(255, 255, 255, 0.02) 100%);
-
-        color: #ffffff;
-        font-family: Roboto;
-        font-size: 18px;
-        font-weight: 300;
-        text-transform: uppercase;
-
-        border-bottom: 1px solid #fff;
-
-        &:hover {
-          background-color: #1ab5b3;
-          background-image: linear-gradient(to top, rgba(0, 0, 0, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%);
-        }
-      }
-    // }
   }
 }
 

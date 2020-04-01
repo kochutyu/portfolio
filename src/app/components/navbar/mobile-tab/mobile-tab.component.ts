@@ -15,9 +15,8 @@ import { UserWindowService } from 'src/app/shared/services/user-window.service';
       })),
       state('open', style({
         height: 'calc(100vh - 70px)',
-        'overflow-y': 'auto'
       })),
-      transition('* <=> *', animate('500ms cubic-bezier(1,.25,1,-0.06)'))
+      transition('* <=> *', animate('500ms ease-in'))
     ]),
     trigger('filter', [
       state('close', style({
@@ -25,9 +24,8 @@ import { UserWindowService } from 'src/app/shared/services/user-window.service';
       })),
       state('open', style({
         height: 'calc(100vh - 70px)',
-        'overflow-y': 'auto'
       })),
-      transition('* <=> *', animate('500ms cubic-bezier(1,.25,1,-0.06)'))
+      transition('* <=> *', animate('500ms ease-in'))
     ]),
   ]
 })

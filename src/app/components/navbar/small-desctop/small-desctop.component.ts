@@ -17,7 +17,7 @@ import { trigger, style, state, transition, animate } from '@angular/animations'
         height: 'calc(100vh - 70px)',
         'overflow-y': 'auto'
       })),
-      transition('* <=> *', animate('500ms cubic-bezier(1,.25,1,-0.06)'))
+      transition('* <=> *', animate('500ms ease-in'))
     ]),
   ]
 })
