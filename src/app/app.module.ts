@@ -17,6 +17,7 @@ import { WorkComponent } from './pages/work/work.component';
 import { AboutComponent } from './pages/about/about.component';
 import { BlogComponent } from './pages/blog/blog.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { CardPreviewComponent } from './components/card-preview/card-preview.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { ContactComponent } from './pages/contact/contact.component';
     AboutComponent,
     BlogComponent,
     ContactComponent,
+    CardPreviewComponent,
   ],
   imports: [
     BrowserModule,

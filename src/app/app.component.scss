@@ -2,7 +2,6 @@
   display: flex;
   height: 100vh;
 
-
   .content {
     height: 100%;
   }
@@ -26,6 +25,11 @@
 @media screen and (max-width: 1299px) {
   .main {
     flex-direction: column;
+  }
+
+  .navbar {
+    position: relative;
+    z-index: 1000;
   }
 
   .content {

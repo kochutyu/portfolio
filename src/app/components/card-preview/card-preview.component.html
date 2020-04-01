@@ -1,0 +1,17 @@
+<div class="portfolio">
+  <ul class="portfolio-works">
+    <li class="portfolio-work" *ngFor="let item of list">
+      <a href="">
+        <div class="href">
+          <div class="hover">
+            <div class="items-info">
+              <img src="./assets/img/components/card-preview/show-more.png" alt="">
+            </div>
+          </div>
+          <div class="opacity"></div>
+          <img [src]="item" alt="">
+        </div>
+      </a>
+    </li>
+  </ul>
+</div>
