@@ -12,6 +12,11 @@ import { LargeDesctopComponent } from './components/navbar/large-desctop/large-d
 import { SmallDesctopComponent } from './components/navbar/small-desctop/small-desctop.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MobileTabComponent } from './components/navbar/mobile-tab/mobile-tab.component';
+import { HomeComponent } from './pages/home/home.component';
+import { WorkComponent } from './pages/work/work.component';
+import { AboutComponent } from './pages/about/about.component';
+import { BlogComponent } from './pages/blog/blog.component';
+import { ContactComponent } from './pages/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +29,11 @@ import { MobileTabComponent } from './components/navbar/mobile-tab/mobile-tab.co
     LargeDesctopComponent,
     SmallDesctopComponent,
     MobileTabComponent,
+    HomeComponent,
+    WorkComponent,
+    AboutComponent,
+    BlogComponent,
+    ContactComponent,
   ],
   imports: [
     BrowserModule,

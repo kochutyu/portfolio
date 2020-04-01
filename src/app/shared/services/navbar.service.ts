@@ -9,7 +9,6 @@ export class NavbarService {
     'work',
     'about',
     'blog',
-    'services',
     'contact',
   ]
   filters: string[] = [

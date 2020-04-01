@@ -1,0 +1,36 @@
+.main {
+  display: flex;
+  height: 100vh;
+
+
+  .content {
+    height: 100%;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  .navbar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 300px;
+  }
+
+  .content {
+    position: relative;
+    width: calc(100% - 300px);
+    left: 300px;
+  }
+}
+
+@media screen and (max-width: 1299px) {
+  .main {
+    flex-direction: column;
+  }
+
+  .content {
+    // width: calc(100% + 300px);
+    width: 100%;
+    background-color: red;
+  }
+}
