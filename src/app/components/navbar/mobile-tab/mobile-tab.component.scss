@@ -5,6 +5,20 @@
   background-color: #242b2e;
   height: 70px;
 
+  .logo-href {
+    margin-left: 25px;
+
+    .logo-aligne {
+      width: 178px;
+      height: 70px;
+      overflow: hidden;
+
+      .logo-app {
+        position: relative;
+        left: -62px;
+      }
+    }
+  }
 
 
   .drop-down-menu {
@@ -74,9 +88,9 @@
       }
     }
 
-    a {
-      text-decoration: none;
-      width: inherit;
+    // a {
+    //   text-decoration: none;
+    //   width: inherit;
 
       li {
         margin: 0 auto;
@@ -100,7 +114,7 @@
           background-image: linear-gradient(to top, rgba(0, 0, 0, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%);
         }
       }
-    }
+    // }
   }
 }
 
