@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HomeService } from 'src/app/shared/services/pages/home.service';
+import { UserWindowService } from 'src/app/shared/services/user-window.service';
 
 @Component({
   selector: 'app-home',
@@ -6,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  widthBlock: string;
+  heightBlock: string;
 
-  constructor() { }
+  constructor(
+    public homeS: HomeService
+  ) { }
 
   ngOnInit(): void {
+
   }
 
 }

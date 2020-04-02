@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { UserWindowService } from 'src/app/shared/services/user-window.service';
 import { CardPreviewService } from 'src/app/shared/services/card-preview.service';
 
@@ -9,6 +9,8 @@ import { CardPreviewService } from 'src/app/shared/services/card-preview.service
 })
 export class CardPreviewComponent implements OnInit {
   list: any[];
+  @Input() widthBlock: string;
+  @Input() heightBlock: string;
 
   constructor(
     public windowS: UserWindowService,

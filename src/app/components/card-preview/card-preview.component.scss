@@ -23,60 +23,62 @@
       width: calc(25% - 6px);
       height: 250px;
 
-      a {
-        user-select: none;
 
-        .href {
+      user-select: none;
+
+      .href {
+        width: 100%;
+        height: 100%;
+        position: relative;
+
+        &:hover .hover {
+          z-index: 3;
+          background-color: #1ab5b3;
+          outline: 3px solid white;
           width: 100%;
           height: 100%;
-          position: relative;
+          opacity: 0.7;
+          animation-duration: 0.5s;
+          animation-name: hover;
+        }
 
-          &:hover .hover {
-            z-index: 3;
-            background-color: #1ab5b3;
-            outline: 3px solid white;
-            width: 100%;
-            height: 100%;
-            opacity: 0.5;
-            animation-duration: 0.5s;
-            animation-name: hover;
+        .opacity {
+          z-index: 2;
+          position: absolute;
+          background-color: black;
+          opacity: 0.4;
+          width: 100%;
+          height: 100%;
+        }
+
+        .hover {
+          opacity: 0;
+          position: absolute;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          &:hover{
+            cursor: pointer;
           }
 
-          .opacity {
-            z-index: 2;
-            position: absolute;
-            background-color: black;
-            opacity: 0.4;
-            width: 100%;
-            height: 100%;
-          }
-
-          .hover {
-            opacity: 0;
-            position: absolute;
+          .items-info {
             display: flex;
-            justify-content: center;
             align-items: center;
-            text-align: center;
+            justify-content: center;
 
-            .items-info {
-              display: flex;
-              align-items: center;
-              justify-content: center;
-
-              img {
-                width: auto;
-                height: auto;
-              }
+            img {
+              width: auto;
+              height: auto;
             }
           }
+        }
 
-          img {
-            z-index: 1;
-            position: absolute;
-            width: 100%;
-            height: 100%;
-          }
+        img {
+          z-index: 1;
+          position: absolute;
+          width: 100%;
+          height: 100%;
         }
       }
     }
@@ -109,98 +111,6 @@
   }
 
   100% {
-    opacity: 0.5;
+    opacity: 0.7;
   }
-}
-
-
-// @media screen and (min-width: 1900) {
-//   .portfolio {
-//     width: 100%;
-//     min-height: 100vh;
-//     background-color: #242b2e;
-
-
-//     &::before {
-//       content: '';
-//       height: 100vh;
-//       width: 10px;
-//       background-color: red;
-//       position: relative;
-//       z-index: 10;
-//     }
-
-//     .portfolio-works {
-//       display: flex;
-//       flex-wrap: wrap;
-
-//       .portfolio-work {
-//         border: 3px solid #242b2e;
-//         list-style-type: none;
-//         width: calc(25% - 6px);
-//         height: 300px;
-
-//         a {
-//           user-select: none;
-
-//           .href {
-//             width: 100%;
-//             height: 100%;
-//             position: relative;
-
-//             &:hover .hover {
-//               z-index: 3;
-//               background-color: #1ab5b3;
-//               outline: 3px solid white;
-//               width: 100%;
-//               height: 100%;
-//               opacity: 0.5;
-//               animation-duration: 0.5s;
-//               animation-name: hover;
-//             }
-
-//             .opacity {
-//               z-index: 2;
-//               position: absolute;
-//               background-color: black;
-//               opacity: 0.4;
-//               width: 100%;
-//               height: 100%;
-//             }
-
-//             .hover {
-//               opacity: 0;
-//               position: absolute;
-//               display: flex;
-//               justify-content: center;
-//               align-items: center;
-//               text-align: center;
-
-//               .items-info {
-//                 display: flex;
-//                 align-items: center;
-//                 justify-content: center;
-
-//                 img {
-//                   width: auto;
-//                   height: auto;
-//                 }
-//               }
-//             }
-
-//             img {
-//               z-index: 1;
-//               position: absolute;
-//               width: 100%;
-//               height: 100%;
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-// }
-
-.height{
-    height: 300px;
 }
