@@ -28,7 +28,7 @@ export class HomeService {
       this.heightBlock = '500px';
     } else if (this.windowS.width < 600) {
       this.widthBlock = 'calc(100% - 6px)';
-      this.heightBlock = '25vh';
+      this.heightBlock = '35vh';
     }
   }
 }
