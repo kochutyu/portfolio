@@ -1,0 +1,24 @@
+<div class="info-contact" [ngStyle]="{
+      'top': topBlock, 
+      'right': rightBlock,
+      'bottom': bottomBlock
+    }">
+  <div class="info-hover" (mouseover)="hover = true" (mouseleave)="hover = false"
+    [ngStyle]="{'transform': transformBlock}">
+    <img src="./assets/img/components/pages/home/contact-information/contact-information.png" alt="">
+  </div>
+  <ul [ngClass]="{
+      'info-hover-ul': true,
+      'opacity': hover
+    }" [ngStyle]="{
+      'top': topContext, 
+      'right': rightContext
+    }">
+    <li>
+      <img src="./assets/img/components/pages/home/contact-information/phone.png" alt=""> {{phoneNumber}}
+    </li>
+    <li>
+      <img src="./assets/img/components/pages/home/contact-information/email.png" alt=""> {{email}}
+    </li>
+  </ul>
+</div>

@@ -1,5 +1,14 @@
 <div class="container">
   <div class="box-shadow">
+    <app-contact-information 
+    [topContext]="contactInfoS.topContext"
+    [rightContext]="contactInfoS.rightContext"
+    [transformBlock]="contactInfoS.transformBlock"
+    [topBlock]="contactInfoS.topBlock"
+    [rightBlock]="contactInfoS.rightBlock"
+    [bottomBlock]="contactInfoS.bottomBlock"
+    >
+    </app-contact-information>
     <app-card-preview [widthBlock]="homeS.widthBlock" [heightBlock]="homeS.heightBlock"></app-card-preview>
   </div>
 </div>

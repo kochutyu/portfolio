@@ -18,6 +18,7 @@ import { AboutComponent } from './pages/about/about.component';
 import { BlogComponent } from './pages/blog/blog.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { CardPreviewComponent } from './components/card-preview/card-preview.component';
+import { ContactInformationComponent } from './components/pages/home/contact-information/contact-information.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { CardPreviewComponent } from './components/card-preview/card-preview.com
     BlogComponent,
     ContactComponent,
     CardPreviewComponent,
+    ContactInformationComponent,
   ],
   imports: [
     BrowserModule,

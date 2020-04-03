@@ -1,0 +1,63 @@
+.info-contact {
+  z-index: 1000;
+  position: fixed !important;
+  right: 28px;
+  top: 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  // top: -12px;
+  // right: 17px;
+
+  &:hover {
+    cursor: context-menu;
+  }
+
+  .info-hover {
+    width: 90px;
+    height: 90px;
+    background-color: rgb(26, 181, 179, .7);
+    opacity: 0.9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+  .info-hover-ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: rgba($color: #000000, $alpha: .5);
+    padding: 20px;
+    display: none;
+    position: relative;
+
+    li {
+      color: #ffffff;
+      font-family: "Roboto";
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 15px;
+      margin-bottom: 10px;
+      list-style-type: none;
+
+      img {
+        margin-right: 10px;
+        user-select: none;
+      }
+    }
+
+    li:nth-child(2) {
+      margin-bottom: 0px;
+    }
+  }
+
+  .info-hover-ul:hover {
+    display: block;
+    cursor: text;
+  }
+
+  .opacity {
+    display: block;
+  }
+}
