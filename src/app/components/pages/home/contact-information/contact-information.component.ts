@@ -7,7 +7,6 @@ import { ContactInformationService } from 'src/app/shared/services/pages/contact
   styleUrls: ['./contact-information.component.scss']
 })
 export class ContactInformationComponent implements OnInit {
-  hover: boolean;
   email: string;
   phoneNumber: string;
 

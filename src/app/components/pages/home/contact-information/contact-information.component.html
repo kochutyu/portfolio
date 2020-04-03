@@ -5,13 +5,13 @@
       'justify-content': justifyBlock,
       'flex-direction': flexDirectionBlock
     }">
-  <div class="info-hover" (mouseover)="hover = true" (mouseleave)="hover = false"
+  <div class="info-hover" (click)="contactInfoS.hover = !contactInfoS.hover" (mouseleave)="contactInfoS.hover = false"
     [ngStyle]="{'transform': transformBlock}">
     <img src="./assets/img/components/pages/home/contact-information/contact-information.png" alt="">
   </div>
   <ul [ngClass]="{
       'info-hover-ul': true,
-      'opacity': hover
+      'opacity': contactInfoS.hover
     }" [ngStyle]="{
       'top': topContext, 
       'right': rightContext
