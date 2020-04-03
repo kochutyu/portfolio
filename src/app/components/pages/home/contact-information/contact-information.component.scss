@@ -4,10 +4,14 @@
   right: 28px;
   top: 28px;
   display: flex;
+  // flex-direction: column-reverse;
   flex-direction: column;
   align-items: flex-end;
   // top: -12px;
   // right: 17px;
+
+  // bottom: 15px;
+  // justify-content: flex-end;
 
   &:hover {
     cursor: context-menu;

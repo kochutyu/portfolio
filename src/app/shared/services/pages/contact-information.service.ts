@@ -7,12 +7,20 @@ import { UserWindowService } from '../user-window.service';
 export class ContactInformationService {
   phoneNumber: string = '+380 99 014 25 94';
   email: string = 'kochutyurawork@gmail.com';
-  topContext: string = ''
-  rightContext: string = ''
-  transformBlock: string = '';
+
+
+
   topBlock: string = '';
   rightBlock: string = '';
   bottomBlock: string = '';
+  justifyBlock: string = '';
+  flexDirectionBlock: string = '';
+
+
+
+  topContext: string = ''
+  rightContext: string = ''
+  transformBlock: string = '';
 
 
   constructor(
@@ -25,16 +33,17 @@ export class ContactInformationService {
     } else if (this.windowS.width >= 1113 && this.windowS.width < 1300) {
       this.resetStyleForSmallDesctop();
     } else if (this.windowS.width < 1113) {
-      // this.resetStyleForMobileAndTabs();
+      this.resetStyleForMobileAndTabs();
     }
   }
-  
+
   resetStyleForLargeDesctop(): void {
     this.topContext = '0';
     this.rightContext = '0';
     this.transformBlock = 'scale(1)';
     this.topBlock = '28px';
     this.rightBlock = '28px';
+    this.flexDirectionBlock = 'column'
   }
 
   resetStyleForSmallDesctop(): void {
@@ -43,13 +52,17 @@ export class ContactInformationService {
     this.transformBlock = 'scale(0.7778)';
     this.topBlock = '-12px';
     this.rightBlock = '19px';
+    this.flexDirectionBlock = 'column'
   }
 
-  // resetStyleForMobileAndTabs(): void { 
-  //   this.topContext = '-166px';
-  //   this.rightContext = '9px';
-  //   this.transformBlock = 'scale(0.7778)';
-  //   this.topBlock = '0'
-  //   this.rightBlock = '19px';
-  // }
+  resetStyleForMobileAndTabs(): void { 
+    this.topContext = '10px';
+    this.rightContext = '9px';
+    this.flexDirectionBlock = 'column-reverse'
+    this.transformBlock = 'scale(0.7778)';
+    this.topBlock = '0';
+    this.bottomBlock = '15px';
+    this.justifyBlock = 'flex-start';
+    this.rightBlock = '19px';
+  }
 }

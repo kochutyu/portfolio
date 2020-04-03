@@ -18,6 +18,8 @@ export class ContactInformationComponent implements OnInit {
   @Input() topBlock: string;
   @Input() rightBlock: string;
   @Input() bottomBlock: string;
+  @Input() justifyBlock: string;
+  @Input() flexDirectionBlock: string;
 
   constructor(
     public contactInfoS: ContactInformationService
