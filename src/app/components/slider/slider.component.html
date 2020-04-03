@@ -2,7 +2,7 @@
   <img [src]="img[iSelect]" alt="" class="img">
   <div class="form-list-checked" #nextSlide>
     <label *ngFor="let item of img; let i = index">
-      <input type="radio" name="slider" [checked]="i === iSelect" (change)="thisItem(i)">
+      <input type="radio" name="slider" [checked]="i === iSelect" (change)="thisItemSelected(i)">
       <div class="fake"></div>
     </label>
   </div>
