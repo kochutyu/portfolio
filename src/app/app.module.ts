@@ -19,6 +19,7 @@ import { BlogComponent } from './pages/blog/blog.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { CardPreviewComponent } from './components/card-preview/card-preview.component';
 import { ContactInformationComponent } from './components/pages/home/contact-information/contact-information.component';
+import { SliderComponent } from './components/slider/slider.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { ContactInformationComponent } from './components/pages/home/contact-inf
     ContactComponent,
     CardPreviewComponent,
     ContactInformationComponent,
+    SliderComponent,
   ],
   imports: [
     BrowserModule,
