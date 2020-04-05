@@ -1,0 +1,8 @@
+<div class="logo-before" *ngFor="let item of list">
+  <div class="logo">
+    <img [src]="item.img" alt="">
+  </div>
+  <div class="input">
+    <input type="text" [placeholder]="item.placeholder">
+  </div>
+</div>

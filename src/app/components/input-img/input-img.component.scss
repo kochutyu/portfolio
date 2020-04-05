@@ -1,0 +1,26 @@
+.logo-before {
+  display: flex;
+  height: 50px;
+  width: 100%;
+  margin-bottom: 10px;
+
+  .logo {
+    height: 32px;
+    line-height: 32px;
+    padding: 10px;
+    border: 2px solid #1ab5b3;
+    border-right: none;
+  }
+
+  .logo {
+    overflow: hidden;
+  }
+
+  .input {
+    width: 100%;
+
+    input {
+      width: calc(100% - 19px);
+    }
+  }
+}
