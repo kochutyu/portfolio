@@ -1,3 +1,116 @@
-<div class="container">
-  <div class="content"></div>
+<div class="container" *ngIf="windowS.width > 1400">
+  <div class="content">
+    <div class="grid">
+      <div class="col-1">
+        <div class="slider">
+          <app-slider [img]="slider" [width]="widthSlider" [height]="heightSlider"></app-slider>
+        </div>
+        <h1 class="mtop-25">Description of work</h1>
+        <p class="mtop-25">
+          {{description}}
+        </p>
+        <div class="hr"></div>
+        <h1 class="mtop-25 mbottom-25">Other works</h1>
+        <app-card-preview [width]="'calc(240px - 6px)'" [height]="'182px'" [border]="'3px solid #fff'"
+          [bgColor]="'#fff'" [list]="list">
+        </app-card-preview>
+        <div class="center">
+          <app-button [align]="'center'" [width]="'150px'" [height]="'50px'" (click)="showMoreWorks()"></app-button>
+        </div>
+      </div>
+      <div class="col-2 hr-vetical">
+        <h1 class="mbottom-25">Project Info</h1>
+        <app-work-info [workInfo]="workInfo"></app-work-info>
+        <h1 class="mtop-25 mbottom-25">Tags</h1>
+        <app-tag [tags]="tags"></app-tag>
+        <h1 class="mtop-25 mbottom-25">Project Features</h1>
+        <app-done-list [list]="list"></app-done-list>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container" *ngIf="windowS.width <= 1400 && windowS.width >= 1113px">
+  <div class="content">
+    <div class="grid">
+      <div class="col-1">
+        <app-slider [img]="slider" [width]="'100%'" [height]="'100%'"></app-slider>
+      </div>
+      <div [ngClass]="{
+        'hr-vetical': windowS.width<=1400,
+        'col-2': true
+      }">
+        <h1 class="mbottom-25">Project Info</h1>
+        <app-work-info [workInfo]="workInfo"></app-work-info>
+        <h1 class="mtop-25 mbottom-25">Tags</h1>
+        <app-tag [tags]="tags"></app-tag>
+      </div>
+    </div>
+    <h1 class="mtop-25">Description of work</h1>
+    <p class="mtop-25">
+      {{description}}
+    </p>
+    <h1 class="mtop-25 mbottom-25">Project Features</h1>
+    <app-done-list [list]="list"></app-done-list>
+    <div class="hr"></div>
+    <h1 class="mtop-25 mbottom-25">Other works</h1>
+    <app-card-preview [width]="'calc(25% - 6px)'" [height]="'182px'" [border]="'3px solid #fff'" [bgColor]="'#fff'"
+      [list]="list">
+    </app-card-preview>
+    <div class="center">
+      <app-button [align]="'center'" [width]="'150px'" [height]="'50px'" (click)="showMoreWorks()"></app-button>
+    </div>
+  </div>
+</div>
+
+<div class="container" *ngIf="windowS.width < 1113 && windowS.width >=600">
+  <div class="content">
+    <div class="slider">
+      <app-slider [img]="slider" [width]="'100%'" [height]="'500px'"></app-slider>
+    </div>
+    <h1 class="mbottom-25 mtop-25">Project Info</h1>
+    <app-work-info [workInfo]="workInfo"></app-work-info>
+    <h1 class="mtop-25">Description of work</h1>
+    <p class="mtop-25">
+      {{description}}
+    </p>
+    <h1 class="mtop-25 mbottom-25">Tags</h1>
+    <app-tag [tags]="tags"></app-tag>
+    <h1 class="mtop-25 mbottom-25">Project Features</h1>
+    <app-done-list [list]="list"></app-done-list>
+    <div class="hr"></div>
+    <h1 class="mtop-25 mbottom-25">Other works</h1>
+    <app-card-preview [width]="'calc(50% - 6px)'" [height]="'250px'" [border]="'3px solid #fff'" [bgColor]="'#fff'"
+      [list]="list">
+    </app-card-preview>
+    <div class="center">
+    <app-button [align]="'center'" [width]="'150px'" [height]="'50px'" (click)="showMoreWorks()"></app-button>
+    </div>
+  </div>
+</div>
+
+<div class="container" *ngIf="windowS.width < 600">
+  <div class="content">
+    <!-- <div class="slider"> -->
+      <app-slider [img]="slider" [width]="'100%'" [height]="'35vh'"></app-slider>
+    <!-- </div> -->
+    <h1 class="mbottom-25 mtop-25">Project Info</h1>
+    <app-work-info [workInfo]="workInfo"></app-work-info>
+    <h1 class="mtop-25">Description of work</h1>
+    <p class="mtop-25">
+      {{description}}
+    </p>
+    <h1 class="mtop-25 mbottom-25">Tags</h1>
+    <app-tag [tags]="tags"></app-tag>
+    <h1 class="mtop-25 mbottom-25">Project Features</h1>
+    <app-done-list [list]="list"></app-done-list>
+    <div class="hr"></div>
+    <h1 class="mtop-25 mbottom-25">Other works</h1>
+    <app-card-preview [width]="'calc(100% - 6px)'" [height]="'35vh'" [border]="'3px solid #fff'" [bgColor]="'#fff'"
+      [list]="list">
+    </app-card-preview>
+    <div class="center">
+      <app-button [align]="'center'" [width]="'150px'" [height]="'50px'" (click)="showMoreWorks()"></app-button>
+    </div>
+  </div>
 </div>

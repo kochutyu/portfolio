@@ -20,6 +20,10 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { CardPreviewComponent } from './components/card-preview/card-preview.component';
 import { ContactInformationComponent } from './components/pages/home/contact-information/contact-information.component';
 import { SliderComponent } from './components/slider/slider.component';
+import { WorkInfoComponent } from './components/work-info/work-info.component';
+import { TagComponent } from './components/tag/tag.component';
+import { DoneListComponent } from './components/done-list/done-list.component';
+import { ButtonComponent } from './components/button/button.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +44,10 @@ import { SliderComponent } from './components/slider/slider.component';
     CardPreviewComponent,
     ContactInformationComponent,
     SliderComponent,
+    WorkInfoComponent,
+    TagComponent,
+    DoneListComponent,
+    ButtonComponent,
   ],
   imports: [
     BrowserModule,
