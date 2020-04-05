@@ -8,7 +8,7 @@ import { CardPreviewService } from 'src/app/shared/services/card-preview.service
   styleUrls: ['./card-preview.component.scss']
 })
 export class CardPreviewComponent implements OnInit {
-  list: any[];
+  @Input() list: any[];
   @Input() width: string;
   @Input() height: string;
   @Input() border: string;
@@ -20,7 +20,7 @@ export class CardPreviewComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.list = this.cardPreviewS.list;
+    // this.list = this.cardPreviewS.list;
   }
 
 }

@@ -3,10 +3,8 @@
   position: fixed !important;
   display: flex;
   align-items: flex-end;
-  user-select: none;
-  ;
-
-
+  
+  
   .info-hover {
     width: 90px;
     height: 90px;
@@ -15,7 +13,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-
+    user-select: none;
+    
     &:hover {
       opacity: 1;
       background-color: rgb(26, 181, 179, 1);
