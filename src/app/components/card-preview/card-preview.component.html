@@ -1,6 +1,10 @@
-<div class="portfolio">
+<div class="portfolio" [ngStyle]="{'background-color': bgColor}">
   <ul class="portfolio-works">
-    <li class="portfolio-work" [style.width]="widthBlock" [style.height]="heightBlock" *ngFor="let item of list">
+    <li class="portfolio-work" *ngFor="let item of list" [ngStyle]="{
+    'border': border,
+    'width': width,
+    'height': height
+    }">
       <div class="href">
         <div class="hover">
           <div class="items-info">

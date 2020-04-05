@@ -9,8 +9,10 @@ import { CardPreviewService } from 'src/app/shared/services/card-preview.service
 })
 export class CardPreviewComponent implements OnInit {
   list: any[];
-  @Input() widthBlock: string;
-  @Input() heightBlock: string;
+  @Input() width: string;
+  @Input() height: string;
+  @Input() border: string;
+  @Input() bgColor: string;
 
   constructor(
     public windowS: UserWindowService,
