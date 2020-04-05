@@ -1,0 +1,112 @@
+.contact {
+  //   width: 100%;
+  min-height: calc(100vh - 100px);
+  background-image: url(../../../assets/img/components/pages/contact/map.png);
+  background-position: center;
+  background-attachment: scroll;
+  display: flex;
+  align-items: center;
+  padding: 25px;
+
+  .contact-form {
+    background-color: #fff;
+    padding: 25px;
+    width: 100%;
+
+    .send-form {
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 25px;
+        height: 200px;
+
+        .col-1 {
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+
+          input {
+            height: 50px;
+
+            &:nth-child(2) {
+              margin-top: 10px;
+              margin-bottom: 28px;
+            }
+          }
+        }
+
+        .col-2 {
+          width: 100%;
+          height: 100%;
+
+          textarea {
+            width: calc(100% - 20px);
+            min-height: calc(100% - 21px);
+          }
+
+          resize: both;
+          background-color: #ddd;
+        }
+      }
+    }
+
+  }
+}
+
+.grid-small-desctop {
+  display: grid;
+  grid-template-columns: 1fr;
+
+  .col-1 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    input {
+      margin-bottom: 20px;
+    }
+  }
+
+  .col-2 {
+    width: 100%;
+    height: 200px;
+
+    textarea {
+      width: calc(100% - 20px);
+      min-height: calc(100% - 21px);
+    }
+
+    resize: both;
+    background-color: #ddd;
+  }
+}
+
+.logo-before {
+  display: flex;
+  height: 50px;
+  width: 100%;
+
+  .logo {
+    height: 32px;
+    line-height: 32px;
+    padding: 10px;
+    border: 2px solid #1ab5b3;
+    border-right: none;
+  }
+
+  .logo {
+    overflow: hidden;
+  }
+
+  .input {
+    width: 100%;
+
+    input {
+      width: calc(100% - 19px);
+    }
+  }
+}
+
+.mt{
+  margin-top: 29px;
+}

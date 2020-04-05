@@ -24,6 +24,7 @@ import { WorkInfoComponent } from './components/work-info/work-info.component';
 import { TagComponent } from './components/tag/tag.component';
 import { DoneListComponent } from './components/done-list/done-list.component';
 import { ButtonComponent } from './components/button/button.component';
+import { InputImgComponent } from './components/input-img/input-img.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { ButtonComponent } from './components/button/button.component';
     TagComponent,
     DoneListComponent,
     ButtonComponent,
+    InputImgComponent,
   ],
   imports: [
     BrowserModule,

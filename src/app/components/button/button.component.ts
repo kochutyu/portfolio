@@ -9,7 +9,7 @@ export class ButtonComponent implements OnInit {
   value: string = 'show more'
   @Input() width: string;
   @Input() height: string;
-  @Input() align: string;
+  @Input() type: string = 'button';
   constructor() { }
 
   ngOnInit(): void {

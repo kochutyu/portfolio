@@ -96,7 +96,7 @@ p {
   }
 }
 
-.center{
+.center {
   margin: 0 auto;
   text-align: center;
 }
@@ -162,3 +162,55 @@ p {
 .outline-none {
   outline: none;
 }
+
+
+input {
+  height: 50px;
+}
+
+input,
+textarea {
+  border: 0;
+  outline: none;
+  box-shadow: none;
+  padding-left: 15px;
+  color: #1ab5b3;
+  font-family: 'Roboto';
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 30px;
+  resize: none;
+  border: 2px solid #1ab5b3;
+
+  &::placeholder {
+    color: #1ab5b3;
+  }
+
+  &:focus {
+    border: 2px solid #848484;
+    color: #848484;
+
+    &::placeholder {
+      color: #848484;
+    }
+  }
+}
+
+textarea {
+  padding-top: 15px;
+  line-height: 18px;
+}
+
+// .logo-before {
+
+//   .logo {
+//     display: flex;
+//     width: 50px;
+//     height: 50px;
+//     background-color: red;
+//   }
+
+//   input {
+//     width: 100px;
+//   }
+// }
