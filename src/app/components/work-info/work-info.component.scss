@@ -1,0 +1,19 @@
+.project-info {
+  display: flex;
+  align-items: center;
+  padding: 10px 0 15px 0;
+  border-bottom: 1px solid rgba($color: #000000, $alpha: .1);
+
+
+  .icon {
+    margin-right: 15px;
+  }
+
+  .info-details {
+    color: #848484;
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 30px;
+  }
+}
