@@ -6,6 +6,9 @@
 //todo RESET STYLES
 @import "style-elements/reset-styles.style.css";
 
+//todo MY STYLES FOR TAGS
+@import "style-elements/my-style.css";
+
 //* GLOBAL STYLES ARE BELOW
 //todo scroll
 @import "style-elements/scroll.style.css";
@@ -33,6 +36,44 @@
   margin-top: 25px;
 }
 
+.mbottom-25 {
+  margin-bottom: 25px;
+}
+
+.hr {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+
+  // background-color: #b4b7b8;
+  height: 1px;
+  width: 100%;
+  margin: 25px 0;
+  opacity: .5;
+
+}
+
+.hr-vetical {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 1px;
+    border-left: 1px solid rgba(0, 0, 0, 0.3);
+    left: -12.5px;
+    opacity: .5;
+  }
+}
+
+span,
+p {
+  color: #a3a3a3;
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 30px;
+}
+
 .rights-author {
   color: rgb(107, 112, 114);
   text-align: center;
@@ -53,6 +94,11 @@
     padding: 25px;
     background-color: #fff;
   }
+}
+
+.center{
+  margin: 0 auto;
+  text-align: center;
 }
 
 .navbar-large-desctop,
@@ -113,6 +159,6 @@
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%);
 }
 
-.outline-none{
+.outline-none {
   outline: none;
 }
