@@ -1,0 +1,39 @@
+.ul-done {
+  padding-left: 25px;
+  margin-top: 10px;
+
+  li {
+    list-style-type: none;
+    position: relative;
+    color: #848484;
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 30px;
+
+    &::before {
+      position: absolute;
+      top: 16px;
+      left: -24px;
+      content: "";
+      height: 4px;
+      width: 10px;
+      background-color: #9a9a9a;
+      -webkit-transform: rotate(45deg);
+      transform: rotate(35deg);
+
+    }
+
+    &:after {
+      position: absolute;
+      top: 12px;
+      left: -19px;
+      content: "";
+      height: 4px;
+      width: 13px;
+      background-color: #9a9a9a;
+      -webkit-transform: rotate(120deg);
+      transform: rotate(125deg);
+    }
+  }
+}
