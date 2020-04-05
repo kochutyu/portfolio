@@ -8,6 +8,8 @@ import { Component, OnInit, ViewChild, ElementRef, Input } from '@angular/core';
 export class SliderComponent implements OnInit {
   iSelect: number = 0;
   @Input() img: string[];
+  @Input() width: string[];
+  @Input() height: string[];
   @ViewChild('nextSlide', { static: false }) nextSlide: ElementRef;
   constructor() { }
 

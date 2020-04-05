@@ -1,4 +1,7 @@
-<div class="slider">
+<div class="slider" [ngStyle]="{
+  'width': width,
+  'height': height
+}">
   <img [src]="img[iSelect]" alt="" class="img">
   <div class="form-list-checked" #nextSlide>
     <label *ngFor="let item of img; let i = index">
