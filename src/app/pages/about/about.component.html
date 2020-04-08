@@ -1,3 +1,66 @@
-<div class="container">
-  <div class="content"></div>
+<!-- <div class="container" *ngIf="windowS.width > 1400">
+  <div class="content">
+    <div class="grid">
+      <div class="col-1">
+        <div class="slider">
+          <app-slider [img]="slider" [width]="'700px'" [height]="'400px'"></app-slider>
+        </div>
+        <h1 class="mtop-25">Describe about Me</h1>
+        <p class="mtop-25">
+          {{description}}
+        </p>
+      </div>
+      <div class="col-2 hr-vetical">
+        <h1 class="mbottom-25">The following technologies are used</h1>
+        <app-progress [progress]="progress"></app-progress>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<div class="container" *ngIf="windowS.width >= 1113px">
+  <div class="content">
+    <div class="grid">
+      <div class="col-1">
+        <app-slider [img]="slider" [width]="'100%'" [height]="'500px'"></app-slider>
+      </div>
+      <div [ngClass]="{
+        'hr-vetical': true,
+        'col-2': true
+      }">
+        <h1 class="mbottom-25">The following technologies are used</h1>
+        <app-progress [progress]="progress"></app-progress>
+      </div>
+    </div>
+    <h1 class="mtop-25">Describe about Me</h1>
+    <p class="mtop-25">
+      {{description}}
+    </p>
+  </div>
+</div>
+
+<div class="container" *ngIf="windowS.width < 1113 && windowS.width >=600">
+  <div class="content">
+    <div class="slider">
+      <app-slider [img]="slider" [width]="'100%'" [height]="'500px'"></app-slider>
+    </div>
+    <h1 class="mbottom-25 mtop-25">The following technologies are used</h1>
+    <app-progress [progress]="progress"></app-progress>
+    <h1 class="mtop-25">Describe about Me</h1>
+    <p class="mtop-25">
+      {{description}}
+    </p>
+  </div>
+</div>
+
+<div class="container" *ngIf="windowS.width < 600">
+  <div class="content">
+    <app-slider [img]="slider" [width]="'100%'" [height]="'35vh'"></app-slider>
+    <h1 class="mbottom-25 mtop-25">The following technologies are used</h1>
+    <app-progress [progress]="progress"></app-progress>
+    <h1 class="mtop-25">Describe about Me</h1>
+    <p class="mtop-25">
+      {{description}}
+    </p>
+  </div>
 </div>

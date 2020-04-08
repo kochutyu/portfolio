@@ -1,0 +1,13 @@
+.grid {
+  display: grid;
+  grid-template-columns: 721px auto;
+  grid-gap: 25px;
+
+  .col-2 {
+  }
+}
+
+.slider {
+  width: 100%;
+  height: 500px;
+}
