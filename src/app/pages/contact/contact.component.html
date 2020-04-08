@@ -12,7 +12,7 @@
             <div class="col-1">
               <app-input-img [list]="inputImg"></app-input-img>
               <div class="mt">
-                <app-button [type]="'submit'" [width]="'100%'" [height]="'50px'"></app-button>
+                <app-button [width]="'100%'" [height]="'50px'"></app-button>
               </div>
             </div>
             <div class="col-2">
@@ -32,7 +32,7 @@
                 <textarea name="" id="" placeholder="type text ..."></textarea>
               </div>
             </div>
-            <app-button [type]="'submit'" [width]="'100%'" [height]="'50px'"></app-button>
+            <app-button [width]="'100%'" [height]="'50px'" (click)="lols()"></app-button>
           </form>
         </ng-template>
       </div>
