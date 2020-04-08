@@ -1,0 +1,18 @@
+<div class="my-skills">
+  <div class="my-skill" *ngFor="let item of progress">
+    <div class="info-skills">
+      <span class="skill">{{item.subject}}</span>
+      <span class="interest">{{item.progress}}%</span>
+    </div>
+    <div class="progress-window">
+      <div [style.width]="item.progress+'%'" [ngClass]="{
+          'progress': true,
+          'good': good(item.progress),
+          'well': well(item.progress),
+          'so-so': soSo(item.progress),
+          'bad': bad(item.progress),
+          'not-bad': notBad(item.progress)
+        }"></div>
+    </div>
+  </div>
+</div>
