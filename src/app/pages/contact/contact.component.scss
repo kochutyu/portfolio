@@ -1,5 +1,4 @@
 .contact {
-  //   width: 100%;
   min-height: calc(100vh - 100px);
   background-image: url(../../../assets/img/components/pages/contact/map.png);
   background-position: center;
@@ -7,52 +6,53 @@
   display: flex;
   align-items: center;
   padding: 25px;
-
-  .contact-form {
-    background-color: #fff;
-    padding: 25px;
-    width: 100%;
-
-    .send-form {
-      .grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-gap: 25px;
-        height: 200px;
-
-        .col-1 {
-          height: 100%;
-          display: flex;
-          flex-direction: column;
-
-          input {
-            height: 50px;
-
-            &:nth-child(2) {
-              margin-top: 10px;
-              margin-bottom: 28px;
-            }
-          }
-        }
-
-        .col-2 {
-          width: 100%;
-          height: 100%;
-
-          textarea {
-            width: calc(100% - 20px);
-            min-height: calc(100% - 21px);
-          }
-
-          resize: both;
-          background-color: #ddd;
-        }
-      }
-    }
-
-  }
+  width: calc(100% - 50px);
 }
 
+.contact-form {
+  background-color: #fff;
+  padding: 25px;
+  width: 100%;
+  width: inherit;
+
+  .send-form {
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 25px;
+      height: 200px;
+
+      .col-1 {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+
+        input {
+          height: 50px;
+
+          &:nth-child(2) {
+            margin-top: 10px;
+            margin-bottom: 28px;
+          }
+        }
+      }
+
+      .col-2 {
+        width: 100%;
+        height: 100%;
+
+        textarea {
+          width: calc(100% - 20px);
+          min-height: calc(100% - 21px);
+        }
+
+        resize: both;
+        background-color: #ddd;
+      }
+    }
+  }
+
+}
 .grid-small-desctop {
   display: grid;
   grid-template-columns: 1fr;

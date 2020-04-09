@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" *ngIf="windowsS.width >= 600">
   <div class="contact p25">
     <div class="contact-form p25">
       <div class="get-info-contact mb30">
@@ -24,7 +24,7 @@
           <form action="">
             <div class="grid-small-desctop">
               <div class="col-1">
-              <app-input-img [list]="inputImg"></app-input-img>
+                <app-input-img [list]="inputImg"></app-input-img>
 
                 <!-- <input type="text" placeholder="email"> -->
               </div>
@@ -38,6 +38,31 @@
       </div>
 
     </div>
+  </div>
+
+</div>
+
+
+<div class="container" *ngIf="windowsS.width < 600">
+    <div class="contact-form">
+      <div class="get-info-contact mb30">
+        <h1 class="mb10">Get in touch with us</h1>
+        <p>{{contactMe}}</p>
+      </div>
+      <div class="send-form">
+        <h1 class="mtop-25 mbottom-25">Send us a message</h1>
+        <form action="">
+          <div class="grid-small-desctop">
+            <div class="col-1">
+              <app-input-img [list]="inputImg"></app-input-img>
+            </div>
+            <div class="col-2 mbottom-25">
+              <textarea name="" id="" placeholder="type text ..."></textarea>
+            </div>
+          </div>
+          <app-button [width]="'100%'" [height]="'50px'" (click)="lols()"></app-button>
+        </form>
+      </div>
   </div>
 
 </div>
