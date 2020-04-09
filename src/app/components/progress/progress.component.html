@@ -5,7 +5,8 @@
       <span class="interest">{{item.progress}}%</span>
     </div>
     <div class="progress-window">
-      <div [style.width]="item.progress+'%'" [ngClass]="{
+      <div class="progress-item">
+        <div [style.width]="item.progress+'%'" [ngClass]="{
           'progress': true,
           'good': good(item.progress),
           'well': well(item.progress),
@@ -13,6 +14,7 @@
           'bad': bad(item.progress),
           'not-bad': notBad(item.progress)
         }"></div>
+      </div>
     </div>
   </div>
 </div>
