@@ -14,10 +14,10 @@ export class ProgressComponent implements OnInit, AfterViewInit {
   }
   
   ngAfterViewInit(): void {
-    this.progress = this.progress.sort((a, b) => b.progress - a.progress);
   }
-
+  
   ngOnInit() {
+    this.progress = this.progress.sort((a, b) => b.progress - a.progress);
   }
 
   good(progress): boolean {
