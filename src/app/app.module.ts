@@ -26,6 +26,9 @@ import { DoneListComponent } from './components/done-list/done-list.component';
 import { ButtonComponent } from './components/button/button.component';
 import { InputImgComponent } from './components/input-img/input-img.component';
 import { ProgressComponent } from './components/progress/progress.component';
+import { HttpClientModule } from '@angular/common/http';
+import { NgxUiLoaderModule, NgxUiLoaderRouterModule } from 'ngx-ui-loader';
+import { ngxUiLoaderConfig } from 'src/loader.config';
 
 @NgModule({
   declarations: [
@@ -57,6 +60,9 @@ import { ProgressComponent } from './components/progress/progress.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
+    NgxUiLoaderModule.forRoot(ngxUiLoaderConfig),
+    NgxUiLoaderRouterModule 
   ],
   providers: [],
   bootstrap: [AppComponent]
