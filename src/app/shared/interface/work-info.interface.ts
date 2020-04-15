@@ -1,4 +1,5 @@
 export interface WorkInfo { 
     img: string;
-    textData: string;
+    textData?: string;
+    date?: Date;
 }

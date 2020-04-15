@@ -2,6 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { HomeService } from 'src/app/shared/services/pages/home.service';
 import { UserWindowService } from 'src/app/shared/services/user-window.service';
 import { ContactInformationService } from 'src/app/shared/services/pages/contact-information.service';
+import { Route } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { Work } from 'src/app/shared/interface/interfaces';
+
 
 @Component({
   selector: 'app-home',
@@ -31,11 +36,15 @@ export class HomeComponent implements OnInit {
 
   constructor(
     public homeS: HomeService,
+    private http: HttpClient,
     public contactInfoS: ContactInformationService
   ) { }
 
   ngOnInit(): void {
-
+    console.log(this.items);
+    
   }
+  items: Observable<any[]>;
+
 
 }

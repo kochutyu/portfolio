@@ -6,14 +6,18 @@
           <app-slider [img]="slider" [width]="widthSlider" [height]="heightSlider"></app-slider>
         </div>
         <h1 class="mtop-25">Description of work</h1>
-        <p class="mtop-25">
+        <p class="mtop-25 mbottom-25">
           {{description}}
         </p>
+        <a [href]="showDemoURL" target="_blank">
+          <app-button [value]="'Show Demo'" [width]="'100%'"></app-button>
+        </a>
         <div class="hr"></div>
         <h1 class="mtop-25 mbottom-25">Other works</h1>
         <app-card-preview [width]="'calc(240px - 6px)'" [height]="'182px'" [border]="'3px solid #fff'"
           [bgColor]="'#fff'" [list]="list">
         </app-card-preview>
+        <div class="mtop-25"></div>
         <div class="center">
           <app-button [width]="'150px'" [height]="'50px'" (click)="showMoreWorks()"></app-button>
         </div>
@@ -24,7 +28,7 @@
         <h1 class="mtop-25 mbottom-25">Tags</h1>
         <app-tag [tags]="tags"></app-tag>
         <h1 class="mtop-25 mbottom-25">Project Features</h1>
-        <app-done-list [list]="list"></app-done-list>
+        <app-done-list [list]="projectFeatures"></app-done-list>
       </div>
     </div>
   </div>
@@ -47,16 +51,20 @@
       </div>
     </div>
     <h1 class="mtop-25">Description of work</h1>
-    <p class="mtop-25">
+    <p class="mtop-25 mbottom-25">
       {{description}}
     </p>
+    <a [href]="showDemoURL" target="_blank" class="mtop-25">
+      <app-button [value]="'Show Demo'" [width]="'100%'"></app-button>
+    </a>
     <h1 class="mtop-25 mbottom-25">Project Features</h1>
-    <app-done-list [list]="list"></app-done-list>
+    <app-done-list [list]="projectFeatures"></app-done-list>
     <div class="hr"></div>
     <h1 class="mtop-25 mbottom-25">Other works</h1>
     <app-card-preview [width]="'calc(25% - 6px)'" [height]="'182px'" [border]="'3px solid #fff'" [bgColor]="'#fff'"
       [list]="list">
     </app-card-preview>
+    <div class="mtop-25"></div>
     <div class="center">
       <app-button [width]="'150px'" [height]="'50px'" (click)="showMoreWorks()"></app-button>
     </div>
@@ -68,47 +76,53 @@
     <div class="slider">
       <app-slider [img]="slider" [width]="'100%'" [height]="'500px'"></app-slider>
     </div>
-    <h1 class="mbottom-25 mtop-25">Project Info</h1>
+    <h1 class="mtop-25 mbottom-25">Project Info</h1>
     <app-work-info [workInfo]="workInfo"></app-work-info>
     <h1 class="mtop-25">Description of work</h1>
-    <p class="mtop-25">
+    <p class="mtop-25 mbottom-25">
       {{description}}
     </p>
+    <a [href]="showDemoURL" target="_blank" class="mtop-25">
+      <app-button [value]="'Show Demo'" [width]="'100%'"></app-button>
+    </a>
     <h1 class="mtop-25 mbottom-25">Tags</h1>
     <app-tag [tags]="tags"></app-tag>
     <h1 class="mtop-25 mbottom-25">Project Features</h1>
-    <app-done-list [list]="list"></app-done-list>
+    <app-done-list [list]="projectFeatures"></app-done-list>
     <div class="hr"></div>
     <h1 class="mtop-25 mbottom-25">Other works</h1>
     <app-card-preview [width]="'calc(50% - 6px)'" [height]="'250px'" [border]="'3px solid #fff'" [bgColor]="'#fff'"
       [list]="list">
     </app-card-preview>
+    <div class="mtop-25"></div>
     <div class="center">
-    <app-button [width]="'150px'" [height]="'50px'" (click)="showMoreWorks()"></app-button>
+      <app-button [width]="'150px'" [height]="'50px'" (click)="showMoreWorks()"></app-button>
     </div>
   </div>
 </div>
 
 <div class="container" *ngIf="windowS.width < 600">
   <div class="content">
-    <!-- <div class="slider"> -->
-      <app-slider [img]="slider" [width]="'100%'" [height]="'35vh'"></app-slider>
-    <!-- </div> -->
-    <h1 class="mbottom-25 mtop-25">Project Info</h1>
+    <app-slider [img]="slider" [width]="'100%'" [height]="'35vh'"></app-slider>
+    <h1 clals="mbottom-25 mtop-25">Project Info</h1>
     <app-work-info [workInfo]="workInfo"></app-work-info>
     <h1 class="mtop-25">Description of work</h1>
-    <p class="mtop-25">
+    <p class="mtop-25 mbottom-25">
       {{description}}
     </p>
+    <a [href]="showDemoURL" target="_blank" class="mtop-25">
+      <app-button [value]="'Show Demo'" [width]="'100%'"></app-button>
+    </a>
     <h1 class="mtop-25 mbottom-25">Tags</h1>
     <app-tag [tags]="tags"></app-tag>
     <h1 class="mtop-25 mbottom-25">Project Features</h1>
-    <app-done-list [list]="list"></app-done-list>
+    <app-done-list [list]="projectFeatures"></app-done-list>
     <div class="hr"></div>
     <h1 class="mtop-25 mbottom-25">Other works</h1>
     <app-card-preview [width]="'calc(100% - 6px)'" [height]="'35vh'" [border]="'3px solid #fff'" [bgColor]="'#fff'"
       [list]="list">
     </app-card-preview>
+    <div class="mtop-25"></div>
     <div class="center">
       <app-button [width]="'150px'" [height]="'50px'" (click)="showMoreWorks()"></app-button>
     </div>

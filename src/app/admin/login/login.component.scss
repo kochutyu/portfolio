@@ -1,0 +1,20 @@
+.form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    // background-color: #fff;
+    .form-control{
+        width: 600px;
+        input{
+            width: inherit;
+        }
+        margin-bottom: 10px;
+    }
+    height: calc(100% - 50px);
+}
+
+.btn{
+    height: 50px;
+    width: 100%;
+}

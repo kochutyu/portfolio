@@ -29,6 +29,9 @@ import { ProgressComponent } from './components/progress/progress.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxUiLoaderModule, NgxUiLoaderRouterModule } from 'ngx-ui-loader';
 import { ngxUiLoaderConfig } from 'src/loader.config';
+import { AdminComponent } from './admin/admin.component';
+import { LoginComponent } from './admin/login/login.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -55,10 +58,13 @@ import { ngxUiLoaderConfig } from 'src/loader.config';
     ButtonComponent,
     InputImgComponent,
     ProgressComponent,
+    AdminComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     HttpClientModule,
     NgxUiLoaderModule.forRoot(ngxUiLoaderConfig),

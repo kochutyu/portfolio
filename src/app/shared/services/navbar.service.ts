@@ -8,7 +8,6 @@ export class NavbarService {
     'home',
     'work',
     'about',
-    'blog',
     'contact',
   ]
   filters: string[] = [
@@ -16,17 +15,6 @@ export class NavbarService {
     'corporative',
     'portfolio',
     'lending',
-    'shop',
-    'shop',
-    'shop',
-    'shop',
-    'shop',
-    'shop',
-    'shop',
-    'shop',
-    'shop',
-    'shop',
-    'shop',
     'shop',
   ]
   statusOpenFilter: string = 'close';

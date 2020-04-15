@@ -5,6 +5,8 @@ import { WorkComponent } from './pages/work/work.component';
 import { AboutComponent } from './pages/about/about.component';
 import { BlogComponent } from './pages/blog/blog.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { AdminComponent } from './admin/admin.component';
+import { LoginComponent } from './admin/login/login.component';
 
 
 const routes: Routes = [
@@ -12,7 +14,7 @@ const routes: Routes = [
   {
     path: 'home', component: HomeComponent
   },
-  { path: 'work', component: WorkComponent },
+  { path: 'work/:id', component: WorkComponent },
   { path: 'about', component: AboutComponent },
   { path: 'blog', component: BlogComponent },
   { path: 'contact', component: ContactComponent },

@@ -23,4 +23,8 @@ export class CardPreviewComponent implements OnInit {
     // this.list = this.cardPreviewS.list;
   }
 
+  showMore(): void{
+    
+  }
+
 }
