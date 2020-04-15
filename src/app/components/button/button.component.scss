@@ -9,7 +9,7 @@
   overflow: hidden;
   color: #2f373b;
   border: 2px dashed #2f373b;
-
+  user-select: none;
 
   &:before,
   &:after {

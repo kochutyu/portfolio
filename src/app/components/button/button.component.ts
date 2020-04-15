@@ -6,9 +6,9 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./button.component.scss']
 })
 export class ButtonComponent implements OnInit {
-  value: string = 'show more'
+  @Input() value: string = 'show more'
   @Input() width: string;
-  @Input() height: string;
+  @Input() height: string = '50px';
   @Input() type: string = 'button';
   constructor() { }
 
