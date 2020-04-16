@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "angular-udemy-1a14d": {
+      "hosting": {
+        "portfolio": [
+          "angular-udemy-1a14d"
+        ]
+      }
+    }
+  }
+}

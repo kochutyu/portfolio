@@ -33,6 +33,22 @@ import { AdminComponent } from './admin/admin.component';
 import { LoginComponent } from './admin/login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+
+const configFire = {
+  apiKey: "AIzaSyBofSaN4s0puPd5ZAfrB2z0SbcmN0JFkWY",
+  authDomain: "portfolio-d9ab9.firebaseapp.com",
+  databaseURL: "https://portfolio-d9ab9.firebaseio.com",
+  projectId: "portfolio-d9ab9",
+  storageBucket: "portfolio-d9ab9.appspot.com",
+  messagingSenderId: "630701939395",
+  appId: "1:630701939395:web:b3bc0f78895b113994a076",
+  measurementId: "G-PSSW2MNCQY"
+};
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -68,7 +84,11 @@ import { ReactiveFormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     HttpClientModule,
     NgxUiLoaderModule.forRoot(ngxUiLoaderConfig),
-    NgxUiLoaderRouterModule 
+    NgxUiLoaderRouterModule,
+    AngularFireModule.initializeApp(configFire),
+    AngularFirestoreModule, // firestore
+    AngularFireAuthModule, // auth
+    AngularFireStorageModule // storage
   ],
   providers: [],
   bootstrap: [AppComponent]
