@@ -22,7 +22,7 @@ export class AboutService {
     const objectStr: any[] = this.progressWorksNotFiltered.map(work => {
       return { tag: work.tags.join(',') } // get arrObj
     });
-    
+
     let tagStr: string = '';
 
     objectStr.forEach(tag => {
@@ -46,5 +46,6 @@ export class AboutService {
       allTags = allTags.filter((item, i) => item !== items); // delete the same tags
     });
 
+    this.progressWorksFiltered = this.progressWorksFiltered.sort((a, b) => +b.percent - +a.percent)
   }
 }

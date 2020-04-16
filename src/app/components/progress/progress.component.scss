@@ -20,11 +20,13 @@
       -webkit-border-radius: 5px;
       -moz-border-radius: 5px;
       -ms-border-radius: 5px;
-      -o-border-radius: 5px;      
+      -o-border-radius: 5px;
+
       .progress-item {
         height: 10px;
-        padding: 5px;
-        width: inherit;
+        padding: 3px;
+        width: calc(100% - 6px);
+
         .progress {
           height: 100%;
           border-radius: 2.5px;
@@ -33,22 +35,23 @@
           -ms-border-radius: 2.5px;
           -o-border-radius: 2.5px;
         }
+
         .good {
           background-color: #00e676;
         }
-  
+
         .well {
           background-color: #64dd17;
         }
-  
+
         .so-so {
           background-color: #fbc02d;
         }
-  
+
         .not-bad {
           background-color: #fb8c00;
         }
-  
+
         .bad {
           background-color: #ff5722;
         }

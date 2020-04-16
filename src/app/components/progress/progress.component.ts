@@ -1,13 +1,12 @@
 import { Component, OnInit, Input, AfterViewInit } from '@angular/core';
-import { IProgress } from 'src/app/shared/model/progress.model';
+import { IProgress } from 'src/app/shared/interface/interfaces';
 
 @Component({
   selector: 'app-progress',
   templateUrl: './progress.component.html',
   styleUrls: ['./progress.component.scss']
 })
-export class ProgressComponent implements OnInit, AfterViewInit {
-  i: string = '50%'
+export class ProgressComponent implements OnInit {
   @Input() progress: IProgress[];
   
   constructor() {
@@ -17,7 +16,6 @@ export class ProgressComponent implements OnInit, AfterViewInit {
   }
   
   ngOnInit() {
-    this.progress = this.progress.sort((a, b) => b.progress - a.progress);
   }
 
   good(progress): boolean {

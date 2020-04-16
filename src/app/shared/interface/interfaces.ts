@@ -15,3 +15,18 @@ export interface IWorkInfo {
     author: string;
     date: Date
 }
+
+export interface IAbout {
+    id?: string;
+    sliderImgURL: string[];
+    descriptionAbout: string;
+}
+
+export interface IProgress {
+    tag: string;
+    percent: string;
+}
+
+export interface ITags {
+    tags: string[];
+}
