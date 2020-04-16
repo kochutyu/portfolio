@@ -1,25 +1,32 @@
-<!-- <div class="container">
-  <form class="contetnt form">
-    <div class="form-control">
-      <input type="text" placeholder="login">
-    </div>
-    <div class="form-control">
-      <input type="password" placeholder="password">
-    </div>
-  </form>
-</div> -->
-
 <div class="container">
   <div class="content form">
-    <form class="contetnt">
-      <div class="form-control">
-        <input type="text" placeholder="login">
+    <form class="contetnt" [formGroup]="form" (ngSubmit)="submit()">
+      <div class="form-control mbottom-10">
+        <input type="text" formControlName="login" placeholder="login">
+        <div class="erorrs" *ngIf="form.get('login').touched && form.get('login').invalid">
+            <div class="alert alert-danger mbottom-10" *ngIf="form.get('login').errors.required"><strong>Oh
+                opps...</strong> login
+              is empty
+            </div>
+        </div>
       </div>
-      <div class="form-control">
-        <input type="password" placeholder="password">
+      <div class="form-control mbottom-10">
+        <input type="password" formControlName="password" placeholder="password">
+        <div class="erorrs" *ngIf="form.get('password').touched && form.get('password').invalid">
+          <div class="alert alert-danger mbottom-10" *ngIf="form.get('password').errors.required"><strong>Oh
+              opps...</strong> password
+            is empty
+          </div>
+          <div class="alert alert-danger mbottom-10" *ngIf="form.get('password').errors.minlength.requiredLength">
+            <strong>Oh
+              opps...</strong> password less than 6 characters. Total length - 
+              {{form.get('password').errors.minlength.actualLength}}
+          </div>
+        </div>
       </div>
 
-        <button type="submit" class="btn"><span>Submit</span></button>
+      <button type="submit" class="btn" [disabled]="form.invalid"><span>Submit</span></button>
     </form>
+
   </div>
 </div>

@@ -30,3 +30,9 @@ export interface IProgress {
 export interface ITags {
     tags: string[];
 }
+
+export interface IUser { 
+    id?: string;
+    login: string;
+    password: string;
+}

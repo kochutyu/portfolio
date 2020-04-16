@@ -86,7 +86,7 @@ p {
   min-height: calc(100% - 100px);
   width: calc(100% - 50px);
   padding: 25px;
-  background-color: #242b2e;
+  background-color: #242b2e;;
 
   .content {
     min-height: calc(100vh - 100px);
@@ -301,5 +301,31 @@ a{
   &:disabled {
     cursor: not-allowed;
     background: #2f373b;
+    span{
+      color: #fff;
+    }
   }
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.alert{
+  margin-top: 5px;
+  height: 50px;
+  line-height: 50px;
+  font-size: 20px;
+  width: calc(100% - 15px);
+  text-align: left;
+  padding-left: 15px;
+  strong{
+    font-weight: bold;
+  }
+}
+
+.alert-danger{
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
 }

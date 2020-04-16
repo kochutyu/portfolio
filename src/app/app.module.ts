@@ -29,14 +29,15 @@ import { ProgressComponent } from './components/progress/progress.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxUiLoaderModule, NgxUiLoaderRouterModule } from 'ngx-ui-loader';
 import { ngxUiLoaderConfig } from 'src/loader.config';
-import { AdminComponent } from './admin/admin.component';
-import { LoginComponent } from './admin/login/login.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AdminComponent } from './admin/admin.component';
+import { LoginComponent } from './admin/login/login.component';
+import { AlertComponent } from './components/alert/alert.component';
 
 const configFire = {
   apiKey: "AIzaSyBofSaN4s0puPd5ZAfrB2z0SbcmN0JFkWY",
@@ -76,10 +77,13 @@ const configFire = {
     ProgressComponent,
     AdminComponent,
     LoginComponent,
+    AlertComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
     HttpClientModule,

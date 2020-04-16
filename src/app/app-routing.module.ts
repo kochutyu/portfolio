@@ -18,6 +18,12 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'blog', component: BlogComponent },
   { path: 'contact', component: ContactComponent },
+  {
+    path: 'admin', component: AdminComponent, children: [
+      { path: '', redirectTo: '/admin/login', pathMatch: 'full' },
+      { path: 'login', component: LoginComponent }
+    ]
+  },
   { path: '**', redirectTo: '/home' }
 ];
 @NgModule({
