@@ -11,6 +11,10 @@
     [flexDirectionBlock]="contactInfoS.flexDirectionBlock"
     >
     </app-contact-information>
-    <app-card-preview [width]="homeS.widthBlock" [height]="homeS.heightBlock" [list]="list" [ngStyle]="{'height': '200vh'}"></app-card-preview>
+    <div class="portfolio">
+      <div class="portfolio-works">
+        <app-card-preview [width]="homeS.widthBlock" [height]="homeS.heightBlock" [list]="works" [ngStyle]="{'height': '200vh'}" imgPrewview></app-card-preview>
+      </div>
+    </div>
   </div>
 </div>

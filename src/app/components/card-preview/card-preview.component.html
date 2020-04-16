@@ -4,7 +4,7 @@
     'border': border,
     'width': width,
     'height': height
-    }" (click)="showMore()">
+    }" (click)="showMore(item)">
       <div class="href">
         <div class="hover">
           <div class="items-info">
@@ -12,7 +12,7 @@
           </div>
         </div>
         <div class="opacity"></div>
-        <img [src]="item" alt="">
+        <img [src]="item.sliderImgURL[0]" alt="">
       </div>
     </li>
   </ul>

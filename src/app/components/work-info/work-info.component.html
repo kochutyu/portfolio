@@ -1,8 +1,16 @@
-<div class="project-info" *ngFor="let item of workInfo">
+<div class="project-info" *ngIf="cardPreviewS.workInfo">
   <div class="icon">
-    <img [src]="item.img" alt="">
+    <img src="./assets/img/components/pages/home/work/work-info/user.png" alt="">
   </div>
   <div class="info-details">
-    <span>{{item.textData}}</span>
+    <span>{{workInfo.author}}</span>
+  </div>
+</div>
+<div class="project-info">
+  <div class="icon">
+    <img src="./assets/img/components/pages/home/work/work-info/date.png" alt="">
+  </div>
+  <div class="info-details">
+    <span>{{workInfo.date}}</span>
   </div>
 </div>

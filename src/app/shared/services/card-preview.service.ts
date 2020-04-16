@@ -1,25 +1,41 @@
 import { Injectable } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs';
+import { Work, IWorkInfo } from '../interface/interfaces';
+import { FirestoreService } from './firestore.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CardPreviewService {
-  // list: any[] = [
-  //   'https://picsum.photos/101',
-  //   'https://picsum.photos/102',
-  //   'https://picsum.photos/103',
-  //   'https://picsum.photos/104',
-  //   'https://picsum.photos/105',
-  //   'https://picsum.photos/106',
-  //   'https://picsum.photos/107',
-  //   'https://picsum.photos/108',
-  //   'https://picsum.photos/109',
-  //   'https://picsum.photos/110',
-  //   'https://picsum.photos/111',
-  //   'https://picsum.photos/112',
-  //   'https://picsum.photos/113',
-  //   'https://picsum.photos/114',
-  // ];
+  work: Work = {
+    author: null,
+    date: null,
+    descriptionWork: null,
+    projectFeatures: null,
+    showDemoURL: null,
+    id: null,
+    sliderImgURL: null,
+    tags: null
+  };
 
-  constructor() { }
+  otherWorks: Work[];
+  $otherWorksSub: Subscription;
+
+  workInfo: IWorkInfo = {
+    author: this.work.author,
+    date: this.work.date,
+  };
+
+  otherWorkVisited: boolean;
+
+  constructor(
+    private route: ActivatedRoute,
+    private fireS: FirestoreService,
+  ) { 
+
+  }
+
+
+
 }

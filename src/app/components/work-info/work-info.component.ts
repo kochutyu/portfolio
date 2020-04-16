@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { IWorkInfo } from 'src/app/shared/model/work-info.model';
+import { CardPreviewService } from 'src/app/shared/services/card-preview.service';
+import { IWorkInfo } from 'src/app/shared/interface/interfaces';
 
 @Component({
   selector: 'app-work-info',
@@ -10,9 +11,13 @@ export class WorkInfoComponent implements OnInit {
   @Input() workInfo: IWorkInfo
 
 
-  constructor() { }
+  constructor(
+    public cardPreviewS: CardPreviewService
+  ) { }
 
   ngOnInit(): void {
+    console.log(this.workInfo);
+    
   }
 
 }

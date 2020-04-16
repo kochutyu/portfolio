@@ -7,7 +7,7 @@ import { ITag } from 'src/app/shared/model/tag.model';
   styleUrls: ['./tag.component.scss']
 })
 export class TagComponent implements OnInit {
-  @Input() tags: ITag[];
+  @Input() tags: string[];
 
   constructor() { }
 

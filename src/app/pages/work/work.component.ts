@@ -1,84 +1,71 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { WorkService } from 'src/app/shared/services/pages/work.service';
-import { IWorkInfo } from 'src/app/shared/model/work-info.model';
 import { ITag } from 'src/app/shared/model/tag.model';
 import { UserWindowService } from 'src/app/shared/services/user-window.service';
-import { Work } from 'src/app/shared/interface/interfaces';
+import { Work, IWorkInfo } from 'src/app/shared/interface/interfaces';
+import { FirestoreService } from 'src/app/shared/services/firestore.service';
+import { ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { CardPreviewService } from 'src/app/shared/services/card-preview.service';
 
 @Component({
   selector: 'app-work',
   templateUrl: './work.component.html',
   styleUrls: ['./work.component.scss']
 })
-export class WorkComponent implements OnInit {
-  work: Work = {
-    author: 'kochut',
-    date: new Date(),
-    descriptionWork: 'description',
-    tags: [
-      'Angular',
-      'CSS',
-      'JavaScript',
-      'JQuery',
-      'Angular',
-    ],
-    projectFeatures: ['Angular', 'CSS', 'HTML', 'JS'],
-    showDemoURL: 'https://kochutyu.github.io/',
-    sliderImgURL: [
-      'https://picsum.photos/200',
-      'https://picsum.photos/201',
-      'https://picsum.photos/202',
-      'https://picsum.photos/202',
-      'https://picsum.photos/202',
-      'https://picsum.photos/203'
-    ]
-  };
-  showDemoURL: string;
-
+export class WorkComponent implements OnInit, OnDestroy {
   widthSlider: string = '100%';
   heightSlider: string = '500px';
-  
-  workInfo: IWorkInfo[] = [
-    {
-      img: './assets/img/components/pages/home/work/work-info/user.png',
-      textData: 'kochutyu'
-    },
-    {
-      img: './assets/img/components/pages/home/work/work-info/date.png',
-      textData: '04.04.2020',
-    },
-  ]
-  
-  slider: string[];
-  tags: string[] = []
 
-  list: string[] = ['Angular', 'CSS', 'HTML', 'JS'];
-  
-  projectFeatures: string[];
-  description: string;
+  id: string;
+  work: Work;
+  works: Work[];
+  $worksSub: Subscription;
+
   constructor(
     public workS: WorkService,
-    public windowS: UserWindowService
+    public windowS: UserWindowService,
+    private fireS: FirestoreService,
+    private route: ActivatedRoute,
+    public cardPrewviewS: CardPreviewService,
   ) { }
+  ngOnDestroy(): void {
+    this.cardPrewviewS.$otherWorksSub.unsubscribe();
+  }
 
   ngOnInit(): void {
-    this.slider = this.work.sliderImgURL;
-    this.tags = this.work.tags;
-    this.projectFeatures = this.work.projectFeatures;
-    this.description = this.work.descriptionWork;
-    this.showDemoURL = this.work.showDemoURL;
+    this.getWorkOnInit()
+  }
+  showMoreWorks() { }
 
+  getWorkOnInit(): void {
+    const id = this.route.snapshot.params['id'];
+    this.cardPrewviewS.work.id = id;
 
-    const randonNum = Math.ceil(3 + Math.random() * (6 - 3));
-    this.list = this.slider.slice(0, randonNum);
+    this.$worksSub = this.fireS.getCollection('works').subscribe(works => {
+      const work: Work = works.map(work => {
+        return {
+          ...work.payload.doc.data(),
+          id: work.payload.doc.id
+        };
+      }).find((work: Work) => work.id === id);
+
+      const otherWorks: Work[] = works.map(work => {
+        return {
+          ...work.payload.doc.data(),
+          id: work.payload.doc.id
+        };
+      }).filter((work: Work) => work.id !== id);
+      this.cardPrewviewS.work = work;
+      this.cardPrewviewS.otherWorks = otherWorks;
+      this.cardPrewviewS.workInfo = {
+        author: this.cardPrewviewS.work.author,
+        date: this.cardPrewviewS.work.date,
+      }
+      this.$worksSub.unsubscribe();
+
+    });
   }
 
-  showMoreWorks(): void{
-    const randonNum = Math.ceil(3 + Math.random() * (6 - 3));
-    console.log(randonNum);
-    
-    const random = this.slider.slice(0, randonNum);
-    random.forEach(item => this.list.push(item))
-    this.list.push()
-  }
 }

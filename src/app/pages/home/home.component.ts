@@ -1,11 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { HomeService } from 'src/app/shared/services/pages/home.service';
 import { UserWindowService } from 'src/app/shared/services/user-window.service';
 import { ContactInformationService } from 'src/app/shared/services/pages/contact-information.service';
 import { Route } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { Work } from 'src/app/shared/interface/interfaces';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { FirestoreService } from 'src/app/shared/services/firestore.service';
 
 
 @Component({
@@ -13,9 +15,10 @@ import { Work } from 'src/app/shared/interface/interfaces';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnDestroy {
   widthBlock: string;
   heightBlock: string;
+  $worksSub: Subscription;
 
   list: any[] = [
     'https://picsum.photos/101',
@@ -37,14 +40,28 @@ export class HomeComponent implements OnInit {
   constructor(
     public homeS: HomeService,
     private http: HttpClient,
-    public contactInfoS: ContactInformationService
+    public contactInfoS: ContactInformationService,
+    private fireS: FirestoreService
   ) { }
+  ngOnDestroy(): void {
+    this.$worksSub.unsubscribe();
+  }
 
   ngOnInit(): void {
-    console.log(this.items);
-    
+    console.log(this.works);
+
+    this.$worksSub = this.fireS.getCollection('works').subscribe(works => {
+      this.works = works.map(work => {
+        return {
+          ...work.payload.doc.data(),
+          id: work.payload.doc.id
+        };
+      })
+    })
+
+
   }
-  items: Observable<any[]>;
+  works: Work[];
 
 
 }

@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { WorkService } from 'src/app/shared/services/pages/work.service';
 import { UserWindowService } from 'src/app/shared/services/user-window.service';
 import { AboutService } from 'src/app/shared/services/pages/about.service';
-import { IWorkInfo } from 'src/app/shared/model/work-info.model';
 import { ITag } from 'src/app/shared/model/tag.model';
 import { IProgress } from 'src/app/shared/model/progress.model';
 
@@ -20,17 +19,6 @@ export class AboutComponent implements OnInit {
     'https://picsum.photos/202',
     'https://picsum.photos/203'
   ];
-
-  workInfo: IWorkInfo[] = [
-    {
-      img: './assets/img/components/pages/home/work/work-info/user.png',
-      textData: 'kochutyu'
-    },
-    {
-      img: './assets/img/components/pages/home/work/work-info/date.png',
-      textData: '04.04.2020'
-    },
-  ]
 
   tags: ITag[] = [
     { tag: 'Angular' },
