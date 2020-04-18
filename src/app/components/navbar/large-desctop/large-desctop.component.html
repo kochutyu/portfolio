@@ -3,9 +3,9 @@
     <app-logo></app-logo>
   </a>
   <ul class="path">
-    <li class="navbar-large-desctop" [routerLink]="['/'+path]" routerLinkActive="navbar-active"
-      *ngFor="let path of paths" (click)="navbarS.toggleDropDown()">
-      {{path}}
+    <li class="navbar-large-desctop" [routerLink]="['/'+item.path]" routerLinkActive="navbar-active"
+      *ngFor="let item of activeNav" (click)="navbarS.toggleDropDown()">
+      {{item.text}}
     </li>
   </ul>
   <div class="filter">

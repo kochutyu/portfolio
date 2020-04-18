@@ -2,6 +2,7 @@ import { Component, OnInit, AfterViewInit, QueryList, Renderer2, ViewChildren, I
 import { FilterListComponent } from '../filter-list/filter-list.component';
 import { NavbarService } from 'src/app/shared/services/navbar.service';
 import { UserWindowService } from 'src/app/shared/services/user-window.service';
+import { INavigate } from 'src/app/shared/interface/interfaces';
 
 @Component({
   selector: 'app-large-desctop',
@@ -10,8 +11,8 @@ import { UserWindowService } from 'src/app/shared/services/user-window.service';
 })
 export class LargeDesctopComponent implements OnInit, AfterViewInit {
 
-  @Input() paths: string[];
   @Input() filters: string[];
+  @Input() activeNav: INavigate[];
 
   indexPreviousRadio: number;
   text: string;
@@ -24,7 +25,10 @@ export class LargeDesctopComponent implements OnInit, AfterViewInit {
     public windowS: UserWindowService
   ) { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    console.log(this.activeNav);
+    
+   }
 
   ngAfterViewInit(): void {
     this.selectFirstElementOfFilterWorks();

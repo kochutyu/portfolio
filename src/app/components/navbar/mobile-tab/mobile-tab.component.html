@@ -9,15 +9,19 @@
   <div class="drop-down-menu" (click)="navbarS.toggleDropDown()"></div>
 
   <ul class="path" [@drop-down]="navbarS.dropDown">
-    <li class="navbar-mobile-tab" [routerLink]="['/'+path]" routerLinkActive="navbar-active" *ngFor="let path of paths"
+    <!-- <li class="navbar-mobile-tab" [routerLink]="['/'+item.path]" routerLinkActive="navbar-active"
+      *ngFor="let item of activeNav"
       (click)="navbarS.toggleDropDown()">
-      {{path}}
-    </li>
+      {{item.path}}
+    </li> -->
+     <li class="navbar-mobile-tab" [routerLink]="['/'+item.path]" routerLinkActive="navbar-active"
+       *ngFor="let item of activeNav" (click)="navbarS.toggleDropDown()">
+       {{item.text}}
+     </li>
     <li class="filter-img" (click)="navbarS.toggleFilter()">
       <img src="assets/img/components/navbar/filter.png" alt="filter" class="filter-logo">
     </li>
   </ul>
-
   <ul class="path fs" [@filter]="navbarS.statusOpenFilter">
     <app-filter-list *ngFor="let item of filters; let i = index" [text]="item"
       (click)="selectItemElementOfFilterWorks()" [ngClass]="{'hover': true}"></app-filter-list>

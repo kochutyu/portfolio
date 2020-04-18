@@ -4,12 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class NavbarService {
-  paths: string[] = [
-    'home',
-    'work',
-    'about',
-    'contact',
-  ]
+  
   filters: string[] = [
     'All works',
     'corporative',

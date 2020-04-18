@@ -3,6 +3,7 @@ import { FilterListComponent } from '../filter-list/filter-list.component';
 import { NavbarService } from 'src/app/shared/services/navbar.service';
 import { UserWindowService } from 'src/app/shared/services/user-window.service';
 import { trigger, style, state, transition, animate } from '@angular/animations';
+import { INavigate } from 'src/app/shared/interface/interfaces';
 
 @Component({
   selector: 'app-small-desctop',
@@ -22,8 +23,8 @@ import { trigger, style, state, transition, animate } from '@angular/animations'
   ]
 })
 export class SmallDesctopComponent implements OnInit, AfterViewInit {
-  @Input() paths: string[];
   @Input() filters: string[];
+  @Input() activeNav: INavigate[];
   @ViewChildren(FilterListComponent) hellos: QueryList<any>;  // list item of filters
   indexPreviousRadio: number;
   text: string;

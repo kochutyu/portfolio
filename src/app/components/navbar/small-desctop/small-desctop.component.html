@@ -6,9 +6,9 @@
   <div class="nav-content">
 
     <ul class="path">
-      <li class="navbar-small-desctop" [routerLink]="['/'+path]" routerLinkActive="navbar-active"
-        *ngFor="let path of paths" (click)="navbarS.toggleDropDown()">
-        {{path}}
+      <li class="navbar-small-desctop" [routerLink]="['/'+item.path]" routerLinkActive="navbar-active"
+        *ngFor="let item of activeNav" (click)="navbarS.toggleDropDown()">
+        {{item.text}}
       </li>
     </ul>
 

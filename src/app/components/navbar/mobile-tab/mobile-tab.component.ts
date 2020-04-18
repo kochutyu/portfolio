@@ -3,6 +3,7 @@ import { trigger, style, state, transition, animate } from '@angular/animations'
 import { NavbarService } from 'src/app/shared/services/navbar.service';
 import { FilterListComponent } from '../filter-list/filter-list.component';
 import { UserWindowService } from 'src/app/shared/services/user-window.service';
+import { INavigate } from 'src/app/shared/interface/interfaces';
 
 @Component({
   selector: 'app-mobile-tab',
@@ -30,8 +31,9 @@ import { UserWindowService } from 'src/app/shared/services/user-window.service';
   ]
 })
 export class MobileTabComponent implements OnInit, AfterViewInit {
-  @Input() paths: string[];
   @Input() filters: string[];
+  @Input() activeNav: INavigate[];
+
 
   @ViewChildren(FilterListComponent) hellos: QueryList<any>;  // list item of filters
   indexPreviousRadio: number;
