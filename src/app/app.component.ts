@@ -3,6 +3,7 @@ import { UserWindowService } from './shared/services/user-window.service';
 import { NavbarService } from './shared/services/navbar.service';
 import { HomeService } from './shared/services/pages/home.service';
 import { ContactInformationService } from './shared/services/pages/contact-information.service';
+import { AuthService } from './admin/shared/services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -15,6 +16,7 @@ export class AppComponent implements OnInit {
     private windowS: UserWindowService,
     private navbarS: NavbarService,
     private homeS: HomeService,
+    private authS: AuthService,
     private contactInfoS: ContactInformationService
   ) { }
   
@@ -27,6 +29,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.authS.loginToAdmin();
     this.windowS.width = window.innerWidth
     this.windowS.height = window.innerHeight;
     this.homeS.homeSizeBlock();

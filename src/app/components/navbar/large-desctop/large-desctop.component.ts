@@ -3,6 +3,8 @@ import { FilterListComponent } from '../filter-list/filter-list.component';
 import { NavbarService } from 'src/app/shared/services/navbar.service';
 import { UserWindowService } from 'src/app/shared/services/user-window.service';
 import { INavigate } from 'src/app/shared/interface/interfaces';
+import { AuthService } from 'src/app/admin/shared/services/auth.service';
+import { AuthGuardService } from 'src/app/admin/shared/services/auth-guard.service';
 
 @Component({
   selector: 'app-large-desctop',
@@ -22,7 +24,9 @@ export class LargeDesctopComponent implements OnInit, AfterViewInit {
   constructor(
     public navbarS: NavbarService,
     private r: Renderer2,
-    public windowS: UserWindowService
+    public windowS: UserWindowService,
+    public authS: AuthService,
+    public viewer: AuthGuardService
   ) { }
 
   ngOnInit(): void {

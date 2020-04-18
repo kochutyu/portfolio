@@ -4,6 +4,7 @@ import { NavbarService } from 'src/app/shared/services/navbar.service';
 import { UserWindowService } from 'src/app/shared/services/user-window.service';
 import { trigger, style, state, transition, animate } from '@angular/animations';
 import { INavigate } from 'src/app/shared/interface/interfaces';
+import { AuthService } from 'src/app/admin/shared/services/auth.service';
 
 @Component({
   selector: 'app-small-desctop',
@@ -32,7 +33,8 @@ export class SmallDesctopComponent implements OnInit, AfterViewInit {
   constructor(
     public navbarS: NavbarService,
     private r: Renderer2,
-    public windowS: UserWindowService
+    public windowS: UserWindowService,
+    public authS: AuthService
   ) { }
 
   ngOnInit(): void {

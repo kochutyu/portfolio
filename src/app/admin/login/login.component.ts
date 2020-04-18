@@ -3,6 +3,8 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { IUser } from 'src/app/shared/interface/interfaces';
 import { AuthService } from '../shared/services/auth.service';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
+import { FirestoreService } from 'src/app/shared/services/firestore.service';
 
 @Component({
   selector: 'app-login',
@@ -10,11 +12,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-
+  
   form: FormGroup;
+  submitted: boolean;
+  adminSub: Subscription;
   constructor(
     private authS: AuthService,
-    private router: Router
+    private router: Router,
+    private fireS: FirestoreService
   ) { }
 
   ngOnInit(): void {
@@ -23,19 +28,29 @@ export class LoginComponent implements OnInit {
       password: new FormControl(null, [Validators.required, Validators.minLength(6)])
     });
   }
-  submitted: boolean;
   submit(): void {
+    this.submitted = true;
     const user: IUser = {
       login: this.form.value.login,
       password: this.form.value.password,
     }
     
-    this.authS.login(user).subscribe((res) => {
-      // this.form.reset();
-      // this.submitted = false;
-      // this.router.navigate(['/home']);
-      console.log(res);
-      
-    });
+    this.adminSub = this.fireS.getCollection('admin').subscribe(res => {
+      console.log(this.authS.ADMIN);
+
+      const admin: IUser = res.map(item => {
+        return {
+          ...item.payload.doc.data(),
+          id: item.payload.doc.id
+        }
+      }).find( (item: IUser) => item.login === user.login && item.password === user.password )
+      this.authS.ADMIN = admin;
+      console.log(this.authS.ADMIN);
+      localStorage.setItem('admin', JSON.stringify(admin));
+      this.submitted = false;
+      this.authS.logIn();
+      this.form.reset();
+      this.adminSub.unsubscribe();
+    })
   }
 }

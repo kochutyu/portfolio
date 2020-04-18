@@ -39,6 +39,7 @@ import { AdminComponent } from './admin/admin.component';
 import { LoginComponent } from './admin/login/login.component';
 import { AlertComponent } from './components/alert/alert.component';
 import { environment } from 'src/environments/environment';
+import { NewWorkComponent } from './admin/pages/new-work/new-work.component';
 
 @NgModule({
   declarations: [
@@ -68,6 +69,7 @@ import { environment } from 'src/environments/environment';
     AdminComponent,
     LoginComponent,
     AlertComponent,
+    NewWorkComponent,
   ],
   imports: [
     BrowserModule,

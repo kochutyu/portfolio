@@ -10,6 +10,7 @@
         *ngFor="let item of activeNav" (click)="navbarS.toggleDropDown()">
         {{item.text}}
       </li>
+      <li class="navbar-small-desctop" *ngIf="authS.checkAdminAuth()" (click)="authS.logOut()">Log out</li>
     </ul>
 
     <div class="filter">

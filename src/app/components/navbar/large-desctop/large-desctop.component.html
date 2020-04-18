@@ -7,6 +7,7 @@
       *ngFor="let item of activeNav" (click)="navbarS.toggleDropDown()">
       {{item.text}}
     </li>
+    <li class="navbar-large-desctop" *ngIf="authS.checkAdminAuth()" (click)="authS.logOut()">Log out</li>
   </ul>
   <div class="filter">
     <img src="assets/img/components/navbar/filter.png" alt="filter" class="filter-logo">

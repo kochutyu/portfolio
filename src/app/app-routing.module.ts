@@ -7,6 +7,8 @@ import { BlogComponent } from './pages/blog/blog.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { AdminComponent } from './admin/admin.component';
 import { LoginComponent } from './admin/login/login.component';
+import { NewWorkComponent } from './admin/pages/new-work/new-work.component';
+import { AuthGuardService } from './admin/shared/services/auth-guard.service';
 
 
 const routes: Routes = [
@@ -21,7 +23,9 @@ const routes: Routes = [
   {
     path: 'admin', component: AdminComponent, children: [
       { path: '', redirectTo: '/admin/login', pathMatch: 'full' },
-      { path: 'login', component: LoginComponent }
+      { path: 'login', component: LoginComponent },
+      { path: 'all-works', component: HomeComponent, canActivate: [AuthGuardService]},
+      { path: 'new-work', component: NewWorkComponent, canActivate: [AuthGuardService] },
     ]
   },
   { path: '**', redirectTo: '/home' }

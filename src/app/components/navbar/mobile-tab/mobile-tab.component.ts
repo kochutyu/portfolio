@@ -4,6 +4,7 @@ import { NavbarService } from 'src/app/shared/services/navbar.service';
 import { FilterListComponent } from '../filter-list/filter-list.component';
 import { UserWindowService } from 'src/app/shared/services/user-window.service';
 import { INavigate } from 'src/app/shared/interface/interfaces';
+import { AuthService } from 'src/app/admin/shared/services/auth.service';
 
 @Component({
   selector: 'app-mobile-tab',
@@ -43,7 +44,8 @@ export class MobileTabComponent implements OnInit, AfterViewInit {
   constructor(
     public navbarS: NavbarService,
     private r: Renderer2,
-    public windowS: UserWindowService
+    public windowS: UserWindowService,
+    public authS: AuthService
   ) { }
 
   ngOnInit(): void {
