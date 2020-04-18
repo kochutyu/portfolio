@@ -35,4 +35,10 @@ export interface IUser {
     id?: string;
     login: string;
     password: string;
+    returnSecureToken?: boolean
+}
+
+export interface FbAuthResponse {
+    idToken: string,
+    expiresIn: string
 }
