@@ -11,10 +11,9 @@
   </ul>
   <div class="filter">
     <img src="assets/img/components/navbar/filter.png" alt="filter" class="filter-logo">
-    <ul class="filter-items">
-      <app-filter-list *ngFor="let item of filters; let i = index" [text]="item"
-        (click)="selectItemElementOfFilterWorks()"></app-filter-list>
-    </ul>
+    <div class="filters">
+      <app-filter></app-filter>
+    </div>
   </div>
   <div class="social-network">
     <app-footer></app-footer>

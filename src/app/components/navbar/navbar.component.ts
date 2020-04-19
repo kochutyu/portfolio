@@ -1,8 +1,8 @@
 import { Component, OnInit, ViewChildren, ElementRef, ViewChild, QueryList, AfterViewInit, Renderer2 } from '@angular/core';
 import { NavbarService } from 'src/app/shared/services/navbar.service';
-import { FilterListComponent } from './filter-list/filter-list.component';
 import { UserWindowService } from 'src/app/shared/services/user-window.service';
 import { AuthService } from 'src/app/admin/shared/services/auth.service';
+import { FilterService } from 'src/app/shared/services/filter.service';
 
 @Component({
   selector: 'app-navbar',
@@ -16,7 +16,8 @@ export class NavbarComponent implements OnInit {
     public navbarS: NavbarService,
     private r: Renderer2,
     public windowS: UserWindowService,
-    public authS: AuthService
+    public authS: AuthService,
+    public filterS: FilterService
   ) { }
 
   ngOnInit(): void {

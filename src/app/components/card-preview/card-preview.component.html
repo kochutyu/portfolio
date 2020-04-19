@@ -1,6 +1,6 @@
 <div class="portfolio" [ngStyle]="{'background-color': bgColor}">
   <ul class="portfolio-works">
-    <li class="portfolio-work" *ngFor="let item of list" [ngStyle]="{
+    <li class="portfolio-work" *ngFor="let item of list | filter:filterS.filter" [ngStyle]="{
     'border': border,
     'width': width,
     'height': height

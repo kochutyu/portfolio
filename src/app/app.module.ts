@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { FilterListComponent } from './components/navbar/filter-list/filter-list.component';
 import { SocialNetworksComponent } from './components/social-networks/social-networks.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LogoComponent } from './components/navbar/logo/logo.component';
@@ -40,12 +39,13 @@ import { LoginComponent } from './admin/login/login.component';
 import { AlertComponent } from './components/alert/alert.component';
 import { environment } from 'src/environments/environment';
 import { NewWorkComponent } from './admin/pages/new-work/new-work.component';
+import { FilterComponent } from './components/navbar/filter/filter.component';
+import { FilterPipe } from './shared/pipes/filter.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    FilterListComponent,
     SocialNetworksComponent,
     FooterComponent,
     LogoComponent,
@@ -70,6 +70,8 @@ import { NewWorkComponent } from './admin/pages/new-work/new-work.component';
     LoginComponent,
     AlertComponent,
     NewWorkComponent,
+    FilterComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
@@ -89,6 +91,6 @@ import { NewWorkComponent } from './admin/pages/new-work/new-work.component';
 
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

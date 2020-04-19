@@ -1,5 +1,5 @@
-<app-large-desctop [filters]='filters' [activeNav]="authS.activeNav" *ngIf="windowS.width >=1300">
+<app-large-desctop [filters]='filterS.filters' [activeNav]="authS.activeNav" *ngIf="windowS.width >=1300">
 </app-large-desctop>
-<app-small-desctop [filters]='filters' [activeNav]="authS.activeNav"
+<app-small-desctop [filters]='filterS.filters' [activeNav]="authS.activeNav"
   *ngIf="windowS.width >=1113 && windowS.width < 1300"></app-small-desctop>
-<app-mobile-tab [filters]='filters' [activeNav]="authS.activeNav" *ngIf="windowS.width < 1113"></app-mobile-tab>
+<app-mobile-tab [filters]='filterS.filters' [activeNav]="authS.activeNav" *ngIf="windowS.width < 1113"></app-mobile-tab>

@@ -10,7 +10,7 @@ export class NewWorkService {
   tags: string[] = [];
   projectFeatures: string[] = [];
   sliderImgURL: string[] = [];
-  filter: string[] = [];
+  filter: string[] = ['All works'];
 
   editStatus: boolean;
 
@@ -85,6 +85,6 @@ export class NewWorkService {
     this.projectFeatures = [];
     this.sliderImgURL = [];
     this.tags = [];
-    this.filter = [];
+    this.filter = ['All works'];
   }
 }

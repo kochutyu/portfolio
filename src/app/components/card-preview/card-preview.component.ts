@@ -6,6 +6,7 @@ import { Work } from 'src/app/shared/interface/interfaces';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FirestoreService } from 'src/app/shared/services/firestore.service';
 import { AuthGuardService } from 'src/app/admin/shared/services/auth-guard.service';
+import { FilterService } from 'src/app/shared/services/filter.service';
 
 @Component({
   selector: 'app-card-preview',
@@ -25,7 +26,8 @@ export class CardPreviewComponent implements OnInit, OnDestroy {
     public cardPrewviewS: CardPreviewService,
     private router: Router,
     private route: ActivatedRoute,
-    private fireS: FirestoreService
+    private fireS: FirestoreService,
+    public filterS: FilterService
   ) { }
   ngOnDestroy(): void {
     // this.$worksSub.unsubscribe();

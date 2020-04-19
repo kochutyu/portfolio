@@ -12,6 +12,10 @@
     padding-right: 20px;
     text-align: right;
     user-select: none;
+    .filters{
+      height: 100px;
+      overflow: auto;
+    }
 
     .filter-items {
       margin-top: 20px;

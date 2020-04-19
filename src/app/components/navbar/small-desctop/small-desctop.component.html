@@ -1,5 +1,5 @@
 <nav class="nav">
-  <a [routerLink]="['/home']" >
+  <a [routerLink]="['/home']">
     <app-logo></app-logo>
   </a>
 
@@ -17,13 +17,11 @@
       <div class="filter-img" (click)="navbarS.toggleFilter()">
         <img src="assets/img/components/navbar/filter.png" alt="filter" class="filter-logo">
       </div>
-
-      <ul class="filter-items" [@filter]="navbarS.statusOpenFilter">
-        <app-filter-list *ngFor="let item of filters; let i = index" [text]="item"
-          (click)="selectItemElementOfFilterWorks()" [ngClass]="{'hover': true}"></app-filter-list>
-      </ul>
+      <div class="filter-items" [@filter]="navbarS.statusOpenFilter">
+        <app-filter></app-filter>
+      </div>
     </div>
-    
+
   </div>
 
 </nav>
