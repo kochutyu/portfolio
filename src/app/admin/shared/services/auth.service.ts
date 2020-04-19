@@ -32,12 +32,10 @@ export class AuthService {
     console.log(JSON.parse(localStorage.getItem('admin')));
     const getAdmin: IUser = JSON.parse(localStorage.getItem('admin'));
     if (getAdmin) {
-      alert('admin');
-      this.router.navigate(['/admin', 'all-works']);
+      this.router.navigate(['/admin', 'new-work']);
       this.activeNav = this.adminNav;
       this.auth = true;
     }
-    this.checkAdminAuth();
   }
 
   checkAdminAuth(): boolean{

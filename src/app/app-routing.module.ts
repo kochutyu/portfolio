@@ -23,8 +23,9 @@ const routes: Routes = [
   {
     path: 'admin', component: AdminComponent, children: [
       { path: '', redirectTo: '/admin/login', pathMatch: 'full' },
+      { path: 'work/edit/:id', component: NewWorkComponent },
       { path: 'login', component: LoginComponent },
-      { path: 'all-works', component: HomeComponent, canActivate: [AuthGuardService]},
+      { path: 'all-works', component: HomeComponent, canActivate: [AuthGuardService] },
       { path: 'new-work', component: NewWorkComponent, canActivate: [AuthGuardService] },
     ]
   },

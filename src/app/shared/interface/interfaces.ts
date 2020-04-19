@@ -2,6 +2,7 @@ import { Tag } from './tag.interface';
 
 export interface Work {
     id?: string;
+    filter?: string[];
     author: string;
     date: Date;
     tags: string[];

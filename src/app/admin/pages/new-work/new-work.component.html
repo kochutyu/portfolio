@@ -1,1 +1,94 @@
-<p>new-work works!</p>
+<div class="container">
+  <div class="content">
+    <form class="grid" [formGroup]="form" (ngSubmit)="submit()">
+      <div class="col-1">
+        <div class="slider">
+          <app-slider [img]="newWorkS.sliderImgURL" [width]="'100%'" [height]="'500px'">
+          </app-slider>
+        </div>
+        <ul class="mtop-25">
+          <li *ngFor="let item of newWorkS.sliderImgURL; let idx = index">
+            <strong>
+              {{idx+1}})
+            </strong> <small>{{item}}</small>
+          </li>
+        </ul>
+        
+        <h1 class="mtop-25">Slider</h1>
+        <div class="form-control">
+          <input type="text" placeholder="img" formControlName="imgURL" class="inputW">
+          <div class="btn-control">
+            <app-button [value]="'ADD IMG'" class="add-tag" (click)="newImg()"></app-button>
+            <app-button [value]="'REMOVE'" class="add-tag" (click)="removeImg()"></app-button>
+            <app-button [value]="'set on preview'" (click)="setOnPreview()"></app-button>
+
+          </div>
+        </div>
+
+
+        <h1 class="mtop-25">Show Demo</h1>
+        <div class="form-control">
+          <input type="text" placeholder="show demo ..." class="inputW" formControlName="showDemoURL">
+        </div>
+
+
+        <h1 class="mtop-25">Description of work</h1>
+        <textarea class="description" placeholder="description" formControlName="descriptionWork"></textarea>
+      </div>
+      <div class="col-2 hr-vetical">
+
+        <div class="project-into-large-desctop">
+          <h1 class="mbottom-25">Project Info</h1>
+          <input type="text" placeholder="author" formControlName="author">
+          <app-work-info [workInfo]="workInfo"></app-work-info>
+        </div>
+
+
+        <div class="tag-large-desctop">
+          <h1 class="mtop-25 mbottom-25">Tags</h1>
+
+          <div class="form-control">
+            <input type="text" placeholder="tag" formControlName="tags" class="inputW">
+            <div class="btn-control">
+              <app-button [value]="'ADD'" class="add-tag" (click)="addTag()"></app-button>
+              <app-button [value]="'REMOVE'" (click)="removeTag()"></app-button>
+            </div>
+          </div>
+
+          <app-tag [tags]="newWorkS.tags"></app-tag>
+        </div>
+
+        <div class="project-features-large-desctop">
+
+          <h1 class="mtop-25 mbottom-25">Project Features</h1>
+
+          <div class="form-control">
+            <input type="text" placeholder="Project Features" formControlName="projectFeatures" class="inputW">
+            <div class="btn-control">
+              <app-button [value]="'ADD'" class="add-tag" (click)="addProjectFeatures()"></app-button>
+              <app-button [value]="'REMOVE'" (click)="removeProjectFeatures()"></app-button>
+            </div>
+          </div>
+
+          <app-done-list [list]="newWorkS.projectFeatures"></app-done-list>
+        </div>
+
+        <h1 class="mtop-25 mbottom-25">Filter</h1>
+
+        <div class="form-control">
+          <input type="text" placeholder="Project Features" formControlName="filter" class="inputW">
+          <div class="btn-control">
+            <app-button [value]="'ADD'" class="add-tag" (click)="addFilter()"></app-button>
+            <app-button [value]="'REMOVE'" (click)="removeFilter()"></app-button>
+          </div>
+          <ul class="mtop-25">
+            <li *ngFor="let item of newWorkS.filter">* {{item}}</li>
+          </ul>
+        </div>
+
+      </div>
+    </form>
+    <button class="btn mtop-25 submit" (click)="submit()" *ngIf="!newWorkS.editStatus"><span>SUBMIT</span></button>
+    <button class="btn mtop-25 submit" (click)="update()" *ngIf="newWorkS.editStatus"><span>Update</span></button>
+  </div>
+</div>

@@ -30,7 +30,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgxUiLoaderModule, NgxUiLoaderRouterModule } from 'ngx-ui-loader';
 import { ngxUiLoaderConfig } from 'src/loader.config';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-
+import { MatSliderModule } from '@angular/material/slider';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
@@ -79,12 +79,14 @@ import { NewWorkComponent } from './admin/pages/new-work/new-work.component';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    MatSliderModule,
     NgxUiLoaderModule.forRoot(ngxUiLoaderConfig),
     NgxUiLoaderRouterModule,
     AngularFireModule.initializeApp(environment.configFire),
     AngularFirestoreModule, // firestore
     AngularFireAuthModule, // auth
     AngularFireStorageModule // storage
+
   ],
   providers: [],
   bootstrap: [AppComponent]

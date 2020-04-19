@@ -5,6 +5,7 @@ import { Observable, Subscription } from 'rxjs';
 import { Work } from 'src/app/shared/interface/interfaces';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FirestoreService } from 'src/app/shared/services/firestore.service';
+import { AuthGuardService } from 'src/app/admin/shared/services/auth-guard.service';
 
 @Component({
   selector: 'app-card-preview',
@@ -34,9 +35,14 @@ export class CardPreviewComponent implements OnInit, OnDestroy {
   }
 
   showMore(work: Work): void {
-    this.router.navigate(['/work', work.id]);
-    this.id = work.id;
-    this.getWorkPageData();
+    if (JSON.parse(localStorage.getItem('auth')) === true) {
+      this.router.navigate(['/admin', 'work', 'edit', work.id]);
+    }
+    else {
+      this.router.navigate(['/work', work.id]);
+      this.id = work.id;
+      this.getWorkPageData();
+    }
   }
 
   id: string;

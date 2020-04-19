@@ -1,15 +1,23 @@
 .slider {
   width: 100%;
   height: 100%;
-  background-color: darkorange;
+  background-color: #fff;
   position: relative;
+  display: flex;
+  justify-self: center;
+  outline: 2px solid #1ab5b3;
 
   .img {
-    width: 100%;
+    max-width: 100%;
     height: 100%;
     position: absolute;
-
-  }
+    left: 50%;
+    transform: translate(-50%);
+    -webkit-transform: translate(-50%);
+    -moz-transform: translate(-50%);
+    -ms-transform: translate(-50%);
+    -o-transform: translate(-50%);
+}
 
   .form-list-checked {
     position: absolute;
@@ -37,7 +45,7 @@
         width: 22px;
         height: 13px;
         border: 1px solid rgba(255, 255, 255, 0.5);
-        background-color: #fff;
+        background-color: rgb(160, 160, 160);
         opacity: 0.5;
       }
 

@@ -35,37 +35,9 @@ export class WorkComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.getWorkOnInit()
   }
   showMoreWorks() { }
 
-  getWorkOnInit(): void {
-    const id = this.route.snapshot.params['id'];
-    this.cardPrewviewS.work.id = id;
-
-    this.$worksSub = this.fireS.getCollection('works').subscribe(works => {
-      const work: Work = works.map(work => {
-        return {
-          ...work.payload.doc.data(),
-          id: work.payload.doc.id
-        };
-      }).find((work: Work) => work.id === id);
-
-      const otherWorks: Work[] = works.map(work => {
-        return {
-          ...work.payload.doc.data(),
-          id: work.payload.doc.id
-        };
-      }).filter((work: Work) => work.id !== id);
-      this.cardPrewviewS.work = work;
-      this.cardPrewviewS.otherWorks = otherWorks;
-      this.cardPrewviewS.workInfo = {
-        author: this.cardPrewviewS.work.author,
-        date: this.cardPrewviewS.work.date,
-      }
-      this.$worksSub.unsubscribe();
-
-    });
-  }
+  
 
 }
