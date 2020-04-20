@@ -45,7 +45,11 @@ export class FilterSmallDesctopAndMobileTabComponent implements OnInit {
     this.activeRadio = true;
     this.navbarS.statusOpenFilter = 'close';
     this.navbarS.toggleDropDown();
-    this.router.navigate(['/home']);
+    if (JSON.parse(localStorage.getItem('auth'))) {
+      this.router.navigate(['/admin', 'all-works']);
+    } else {
+      this.router.navigate(['/home']);
+    }
     this.homeS.scale0_5();
     setTimeout(() => {
       this.homeS.scale1();

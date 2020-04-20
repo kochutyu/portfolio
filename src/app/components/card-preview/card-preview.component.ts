@@ -17,7 +17,7 @@ import { HomeService } from 'src/app/shared/services/pages/home.service';
   animations: [
     trigger('filter', [
       state('start', style({
-        'transform': 'scale(.5)',
+        'transform': 'scale(.7)',
         'opacity': 0
       })),
       state('end', style({

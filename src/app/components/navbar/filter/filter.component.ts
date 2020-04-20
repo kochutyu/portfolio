@@ -41,7 +41,12 @@ export class FilterComponent implements OnInit {
     this.activeItem = item.target.value;
     this.filterS.filter = item.target.value;
     this.activeRadio = true;
-    this.router.navigate(['/home']);
+    
+    if (JSON.parse(localStorage.getItem('auth'))) {
+      this.router.navigate(['/admin', 'all-works']);
+    } else {
+      this.router.navigate(['/home']);
+    }
     this.homeS.scale0_5();
     setTimeout(() => {
       this.homeS.scale1();
