@@ -6,7 +6,11 @@
     </div>
   </a>
 
-  <div class="drop-down-menu" (click)="navbarS.toggleDropDown()"></div>
+  <div class="drop-down-menu" (click)="this.navbarS.toggleDropDown()">
+    <div class="drop drop-1" [@drop-1]="navbarS.dropDown"></div>
+    <div class="drop drop-2" [@drop-2]="navbarS.dropDown"></div>
+    <div class="drop drop-3" [@drop-3]="navbarS.dropDown"></div>
+  </div>
 
   <ul class="path" [@drop-down]="navbarS.dropDown">
     <li class="navbar-mobile-tab" [routerLink]="['/'+item.path]" routerLinkActive="navbar-active"

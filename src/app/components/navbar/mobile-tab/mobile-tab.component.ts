@@ -28,6 +28,45 @@ import { AuthService } from 'src/app/admin/shared/services/auth.service';
       })),
       transition('* <=> *', animate('500ms ease-in'))
     ]),
+    trigger('drop-1', [
+      state('close', style({
+        'transform': 'none',
+        'top': '0',
+        'background-color': '#fff',
+        'border': 'none'
+      })),
+      state('open', style({
+        'transform': 'rotate(45deg) translate(-8%, -25%)',
+        'top': '50%',
+        'background-color': '#1ab5b3',
+        'border': '2px solid #fff'
+      })),
+      transition('* <=> *', animate('500ms ease-in'))
+    ]),
+    trigger('drop-2', [
+      state('close', style({
+        'opacity': '1'
+      })),
+      state('open', style({
+        'opacity': '0'
+      })),
+      transition('* <=> *', animate('250ms ease-in'))
+    ]),
+    trigger('drop-3', [
+      state('close', style({
+        'transform': 'none',
+        'bottom': '0',
+        'background-color': '#fff',
+        'border': 'none'
+      })),
+      state('open', style({
+        'transform': 'rotate(-45deg) translate(-14%, 37%)',
+        'bottom': '50%',
+        'background-color': '#1ab5b3',
+        'border': '2px solid #fff'
+      })),
+      transition('* <=> *', animate('500ms ease-in'))
+    ])
   ]
 })
 export class MobileTabComponent implements OnInit, AfterViewInit {
@@ -35,7 +74,6 @@ export class MobileTabComponent implements OnInit, AfterViewInit {
   @Input() activeNav: INavigate[];
   indexPreviousRadio: number;
   text: string;
-
 
   constructor(
     public navbarS: NavbarService,
