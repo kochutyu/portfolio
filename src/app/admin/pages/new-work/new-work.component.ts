@@ -184,6 +184,7 @@ export class NewWorkComponent implements OnInit {
     }
     console.log(this.work);
     this.form.reset();
+    this.newWorkS.reset();
     this.fireS.setWork(this.work);
   }
 

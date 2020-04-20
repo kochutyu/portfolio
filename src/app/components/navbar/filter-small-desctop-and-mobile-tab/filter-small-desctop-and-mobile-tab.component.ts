@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FilterService } from 'src/app/shared/services/filter.service';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { NavbarService } from 'src/app/shared/services/navbar.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-filter-small',
@@ -14,7 +15,7 @@ import { NavbarService } from 'src/app/shared/services/navbar.service';
       })),
       state('open', style({
         height: 'calc(100vh - 70px)',
-        'overflow-y': 'auto'
+        'overflow-y': 'hiden'
       })),
       transition('* <=> *', animate('500ms ease-in'))
     ]),
@@ -28,7 +29,8 @@ export class FilterSmallDesctopAndMobileTabComponent implements OnInit {
 
   constructor(
     public filterS: FilterService,
-    private navbarS: NavbarService
+    private navbarS: NavbarService,
+    private router: Router
   ) {
   }
 
@@ -39,7 +41,9 @@ export class FilterSmallDesctopAndMobileTabComponent implements OnInit {
     this.activeItem = item.target.value;
     this.filterS.filter = item.target.value;
     this.activeRadio = true;
-    this.navbarS.statusOpenFilter = 'close'
+    this.navbarS.statusOpenFilter = 'close';
+    this.navbarS.toggleDropDown();
+    this.router.navigate(['/home']);
   }
   filterWorks(): void {
 

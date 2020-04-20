@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FilterService } from 'src/app/shared/services/filter.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-filter',
@@ -26,7 +27,8 @@ export class FilterComponent implements OnInit {
   activeRadio: boolean;
 
   constructor(
-    public filterS: FilterService
+    public filterS: FilterService,
+    private router: Router
   ) {
   }
 
@@ -37,6 +39,8 @@ export class FilterComponent implements OnInit {
     this.activeItem = item.target.value;
     this.filterS.filter = item.target.value;
     this.activeRadio = true;
+    this.router.navigate(['/home']);
+
   }
   filterWorks(): void { 
 
