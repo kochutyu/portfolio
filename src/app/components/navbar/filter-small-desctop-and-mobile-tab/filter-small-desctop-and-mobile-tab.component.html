@@ -1,0 +1,10 @@
+<form class="filter-all">
+    <div class="filter-item-column">
+      <label
+        [ngClass]="{'unselectable': true, 'active-first-radio': i === 0 && !activeRadio, 'active-radio': item === activeItem}"
+        *ngFor="let item of filterS.filters; let i = index" [for]="i" (click)="filterWorks()">
+        <input type="radio" [value]="item" name="item" [id]="i" [checked]="i === 0" (change)="thisItem($event)">
+        {{item}}
+      </label>
+    </div>
+</form>

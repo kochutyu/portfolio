@@ -18,8 +18,9 @@
       <img src="assets/img/components/navbar/filter.png" alt="filter" class="filter-logo">
     </li>
   </ul>
-  <div class="filter-items" [@filter]="navbarS.statusOpenFilter">
-    <app-filter></app-filter>
+  <!-- <ul class="path fs" [@filter]="navbarS.statusOpenFilter"></ul> -->
+  <div class="filter-items path fs" [@filter]="navbarS.statusOpenFilter">
+    <app-filter-small></app-filter-small>
   </div>
 
 </nav>

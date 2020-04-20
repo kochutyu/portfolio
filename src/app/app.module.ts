@@ -41,6 +41,7 @@ import { environment } from 'src/environments/environment';
 import { NewWorkComponent } from './admin/pages/new-work/new-work.component';
 import { FilterComponent } from './components/navbar/filter/filter.component';
 import { FilterPipe } from './shared/pipes/filter.pipe';
+import { FilterSmallDesctopAndMobileTabComponent } from './components/navbar/filter-small-desctop-and-mobile-tab/filter-small-desctop-and-mobile-tab.component';
 
 @NgModule({
   declarations: [
@@ -71,7 +72,8 @@ import { FilterPipe } from './shared/pipes/filter.pipe';
     AlertComponent,
     NewWorkComponent,
     FilterComponent,
-    FilterPipe
+    FilterPipe,
+    FilterSmallDesctopAndMobileTabComponent
   ],
   imports: [
     BrowserModule,

@@ -9,7 +9,7 @@ import { Work } from '../interface/interfaces';
 })
 export class FilterService {
   filters: string[] = [];
-  filter: string;
+  filter: string = "All works";
   constructor(
     private firestore: AngularFirestore
   ) { }

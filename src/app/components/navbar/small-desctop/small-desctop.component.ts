@@ -16,7 +16,7 @@ import { AuthService } from 'src/app/admin/shared/services/auth.service';
       })),
       state('open', style({
         height: 'calc(100vh - 70px)',
-        'overflow-y': 'auto'
+        'overflow-y': 'auto',
       })),
       transition('* <=> *', animate('500ms ease-in'))
     ]),
