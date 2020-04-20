@@ -3,6 +3,7 @@ import { FilterService } from 'src/app/shared/services/filter.service';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { NavbarService } from 'src/app/shared/services/navbar.service';
 import { Router } from '@angular/router';
+import { HomeService } from 'src/app/shared/services/pages/home.service';
 
 @Component({
   selector: 'app-filter-small',
@@ -30,7 +31,8 @@ export class FilterSmallDesctopAndMobileTabComponent implements OnInit {
   constructor(
     public filterS: FilterService,
     private navbarS: NavbarService,
-    private router: Router
+    private router: Router,
+    private homeS: HomeService
   ) {
   }
 
@@ -44,6 +46,10 @@ export class FilterSmallDesctopAndMobileTabComponent implements OnInit {
     this.navbarS.statusOpenFilter = 'close';
     this.navbarS.toggleDropDown();
     this.router.navigate(['/home']);
+    this.homeS.scale0_5();
+    setTimeout(() => {
+      this.homeS.scale1();
+    }, 500);
   }
   filterWorks(): void {
 

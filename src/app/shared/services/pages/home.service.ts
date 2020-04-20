@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { UserWindowService } from '../user-window.service';
+import { start } from 'repl';
 
 @Injectable({
   providedIn: 'root'
@@ -7,10 +8,18 @@ import { UserWindowService } from '../user-window.service';
 export class HomeService {
   widthBlock: string = '150px';
   heightBlock: string = '150px';
-
+  animate: string = 'end';
   constructor(
     private windowS: UserWindowService
   ) { }
+
+  scale0_5(): void {
+    this.animate = 'start';
+  }
+  
+  scale1(): void {
+    this.animate = 'end';
+  }
 
   homeSizeBlock(): void {
     if (this.windowS.width >= 1600) {

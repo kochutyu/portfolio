@@ -8,6 +8,7 @@ import { Observable, Subscription } from 'rxjs';
 import { Work } from 'src/app/shared/interface/interfaces';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { FirestoreService } from 'src/app/shared/services/firestore.service';
+import { trigger, state, style, animate, transition } from '@angular/animations';
 
 
 @Component({

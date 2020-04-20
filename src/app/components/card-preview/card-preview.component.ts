@@ -7,11 +7,26 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { FirestoreService } from 'src/app/shared/services/firestore.service';
 import { AuthGuardService } from 'src/app/admin/shared/services/auth-guard.service';
 import { FilterService } from 'src/app/shared/services/filter.service';
+import { trigger, style, state, transition, animate } from '@angular/animations';
+import { HomeService } from 'src/app/shared/services/pages/home.service';
 
 @Component({
   selector: 'app-card-preview',
   templateUrl: './card-preview.component.html',
-  styleUrls: ['./card-preview.component.scss']
+  styleUrls: ['./card-preview.component.scss'],
+  animations: [
+    trigger('filter', [
+      state('start', style({
+        'transform': 'scale(.5)',
+        'opacity': 0
+      })),
+      state('end', style({
+        'transform': 'scale(1)',
+        'opacity': 1
+      })),
+      transition('* <=> *', animate('250ms ease-out'))
+    ]),
+  ]
 })
 export class CardPreviewComponent implements OnInit, OnDestroy {
   @Input() list: any[];
@@ -20,6 +35,9 @@ export class CardPreviewComponent implements OnInit, OnDestroy {
   @Input() border: string;
   @Input() bgColor: string;
   @Input() imgPrewview: string;
+  // 'transform': 'scale(0)',
+
+  animateBlock: string = 'start'
 
   constructor(
     public windowS: UserWindowService,
@@ -27,7 +45,8 @@ export class CardPreviewComponent implements OnInit, OnDestroy {
     private router: Router,
     private route: ActivatedRoute,
     private fireS: FirestoreService,
-    public filterS: FilterService
+    public filterS: FilterService,
+    public homeS: HomeService
   ) { }
   ngOnDestroy(): void {
     // this.$worksSub.unsubscribe();

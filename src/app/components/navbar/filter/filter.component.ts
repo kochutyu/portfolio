@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FilterService } from 'src/app/shared/services/filter.service';
 import { Router } from '@angular/router';
+import { HomeService } from 'src/app/shared/services/pages/home.service';
 
 @Component({
   selector: 'app-filter',
@@ -28,7 +29,8 @@ export class FilterComponent implements OnInit {
 
   constructor(
     public filterS: FilterService,
-    private router: Router
+    private router: Router,
+    private homeS: HomeService
   ) {
   }
 
@@ -40,7 +42,10 @@ export class FilterComponent implements OnInit {
     this.filterS.filter = item.target.value;
     this.activeRadio = true;
     this.router.navigate(['/home']);
-
+    this.homeS.scale0_5();
+    setTimeout(() => {
+      this.homeS.scale1();
+    }, 500);
   }
   filterWorks(): void { 
 

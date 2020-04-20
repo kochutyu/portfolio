@@ -10,7 +10,7 @@
     background-color: red;
     position: relative;
     z-index: 10;
-  }
+}
 
   .portfolio-works {
     display: flex;
@@ -21,6 +21,12 @@
       list-style-type: none;
       width: calc(25% - 6px);
       height: 250px;
+      transform: scale(1);
+
+      
+
+
+
 
 
       user-select: none;
