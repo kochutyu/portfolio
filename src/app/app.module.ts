@@ -42,6 +42,7 @@ import { NewWorkComponent } from './admin/pages/new-work/new-work.component';
 import { FilterComponent } from './components/navbar/filter/filter.component';
 import { FilterPipe } from './shared/pipes/filter.pipe';
 import { FilterSmallDesctopAndMobileTabComponent } from './components/navbar/filter-small-desctop-and-mobile-tab/filter-small-desctop-and-mobile-tab.component';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -89,8 +90,9 @@ import { FilterSmallDesctopAndMobileTabComponent } from './components/navbar/fil
     AngularFireModule.initializeApp(environment.configFire),
     AngularFirestoreModule, // firestore
     AngularFireAuthModule, // auth
-    AngularFireStorageModule // storage
-
+    AngularFireStorageModule, // storage
+    BrowserAnimationsModule,
+    ToastrModule.forRoot() // ToastrModule added
   ],
   providers: [],
   bootstrap: [AppComponent],

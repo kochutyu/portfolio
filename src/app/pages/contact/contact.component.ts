@@ -3,6 +3,7 @@ import { UserWindowService } from 'src/app/shared/services/user-window.service';
 import { InputImg } from 'src/app/shared/interface/input-img.interface';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-contact',
@@ -28,7 +29,8 @@ export class ContactComponent implements OnInit {
   ]
   constructor(
     public windowsS: UserWindowService,
-    private http: HttpClient
+    private http: HttpClient,
+    private toastr: ToastrService
   ) { }
 
   ngOnInit(): void {
@@ -60,10 +62,11 @@ export class ContactComponent implements OnInit {
       }
     }).subscribe(res => {
       this.submited = false;
-      this.form.reset();
+      // this.form.reset();
     }, error => {
-        this.form.reset();
-        this.submited = false;
+      this.submited = false;
+        this.toastr.success('I will soon read the message. 😎💪🏽',`Dear ${name.name} , message sent!`);
+      this.form.reset();
     })
   }
 
