@@ -27,7 +27,7 @@ exports.sendMail = functions.https.onRequest((req, res) => {
 
     const mailOptions = {
       from: 'janedoe@gmail.com', // Something like: Jane Doe <janedoe@gmail.com>
-      to: 'kochutyura@gmail.com',
+      to: 'kochutyurawork@gmail.com',
       subject: 'PORTFOLIO', // email subject
       html: `
                 <div style="margin:0 auto; padding:25px; display: block !important; background-color:#47cecc; outline: 5px dashed #1ab5b3; margin: 5px;">
