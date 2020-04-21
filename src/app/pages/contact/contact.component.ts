@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserWindowService } from 'src/app/shared/services/user-window.service';
 import { InputImg } from 'src/app/shared/interface/input-img.interface';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-contact',
@@ -26,7 +27,8 @@ export class ContactComponent implements OnInit {
     }
   ]
   constructor(
-    public windowsS: UserWindowService
+    public windowsS: UserWindowService,
+    private http: HttpClient
   ) { }
 
   ngOnInit(): void {
@@ -41,14 +43,25 @@ export class ContactComponent implements OnInit {
   lols(): void {
 
   }
-
+  submited: boolean;
   submit(): void {
-    const name = { 
-      user: this.form.value.user,
+    this.submited = true;
+    const name = {
+      name: this.form.value.user,
       email: this.form.value.email,
       text: this.form.value.text,
     }
-    console.log('name', name);
+    const url = 'https://us-central1-portfolio-d9ab9.cloudfunctions.net/sendMail';
+    this.http.post(url, null, {
+      params: {
+        name: name.name,
+        email: name.email,
+        text: name.text,
+      }
+    }).subscribe(res => {
+      console.log(res);
+      this.submited = false;
+    });
   }
 
 }

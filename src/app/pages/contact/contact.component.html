@@ -118,7 +118,7 @@
             <textarea name="" id="" placeholder="type text ..." formControlName="text"></textarea>
           </div>
         </div>
-        <button class="btn" [ngStyle]="{'width': '100%', 'height': '50px'}" [disabled]="form.invalid"
+        <button class="btn" [ngStyle]="{'width': '100%', 'height': '50px'}" [disabled]="form.invalid || submited"
           (click)="submit()"><span>SEND
             MESSAGE</span></button>
       </form>
