@@ -62,10 +62,10 @@ export class ContactComponent implements OnInit {
       }
     }).subscribe(res => {
       this.submited = false;
-      // this.form.reset();
+      this.form.reset();
     }, error => {
       this.submited = false;
-        this.toastr.success('I will soon read the message. 😎💪🏽',`Dear ${name.name} , message sent!`);
+      this.toastr.success('I will soon read the message.😎💪🏽', `Dear ${name.name}, message sent!`);
       this.form.reset();
     })
   }
