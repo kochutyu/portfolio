@@ -3,7 +3,10 @@
     <div class="navbar">
         <app-navbar></app-navbar>
     </div>
-    <div class="content">
+    <div [ngClass]="{
+        'content': true,
+        'fixed': windowS.scroll>1 && windowS.width<1113
+    }">
         <router-outlet></router-outlet>
     </div>
      <ngx-ui-loader></ngx-ui-loader>

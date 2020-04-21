@@ -1,4 +1,7 @@
-<nav class="nav">
+<nav [ngClass]="{
+  'nav': true,
+  'fixed': windowS.scroll>1
+}">
 
   <a [routerLink]="['/home']" class="outline-none logo-href" (click)="navbarS.resetToggle()">
     <div class="logo-align">

@@ -6,6 +6,6 @@ import { Injectable } from '@angular/core';
 export class UserWindowService {
   width: number;
   height: number;
-
+  scroll: number;
   constructor() { }
 }

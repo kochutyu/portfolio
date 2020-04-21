@@ -15,7 +15,7 @@ import { map } from 'rxjs/operators';
 export class AppComponent implements OnInit {
   title = 'portfolio';
   constructor(
-    private windowS: UserWindowService,
+    public windowS: UserWindowService,
     private navbarS: NavbarService,
     private homeS: HomeService,
     private authS: AuthService,
@@ -27,8 +27,15 @@ export class AppComponent implements OnInit {
     this.windowS.width = event.target.innerWidth
     this.windowS.height = event.target.innerHeight;
     this.homeS.homeSizeBlock();
+    
     this.navbarS.resetToggle();
     this.contactInfoS.scaleBlockContactInfo();
+  }
+  
+  @HostListener('window:scroll', ['$event']) onScroll(event) {
+    this.windowS.scroll = window.pageYOffset;
+    console.log(this.windowS.scroll);
+    
   }
 
   ngOnInit(): void {
@@ -45,7 +52,7 @@ export class AppComponent implements OnInit {
       filter = filter.splice(lengthFilterArr, filter.length - lengthFilterArr)
       // console.log("FILTER ONLY STR", filter);
       let filters = [];
-      filter.forEach(items => { 
+      filter.forEach(items => {
         const itemFilter: string = filter.find(item => item === items); // save filter
 
         if (itemFilter === 'All works') {
@@ -60,12 +67,13 @@ export class AppComponent implements OnInit {
       console.log(filter);
       console.log(filters);
       this.filterS.filters = filters;
-      
+
 
     });
     this.authS.loginToAdmin();
     this.windowS.width = window.innerWidth
     this.windowS.height = window.innerHeight;
+    this.windowS.scroll = window.pageYOffset;
     this.homeS.homeSizeBlock();
     this.contactInfoS.scaleBlockContactInfo();
     this.navbarS.resetToggle();
