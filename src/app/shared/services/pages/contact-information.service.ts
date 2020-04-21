@@ -29,11 +29,9 @@ export class ContactInformationService {
   scaleBlockContactInfo(): void {
     if (this.windowS.width >= 1300) {
       this.resetStyleForLargeDesctop();
-    } else if (this.windowS.width >= 1113 && this.windowS.width < 1300) {
-      this.resetStyleForSmallDesctop();
-    } else if (this.windowS.width < 1113) {
-      this.resetStyleForMobileAndTabs();
-    }
+    } else if (this.windowS.width < 1300) {
+      this.resetStyleForMobileAndTabsAndSmallDesctop();
+    } 
   }
 
   resetStyleForLargeDesctop(): void {
@@ -51,29 +49,14 @@ export class ContactInformationService {
 
   }
 
-  resetStyleForSmallDesctop(): void {
-    // todo block
-    this.transformBlock = 'scale(0.7778)';
-    this.flexDirectionBlock = 'column'
-    this.justifyBlock = 'flex-end';
-    this.topBlock = '-12px';
-    this.rightBlock = '19px';
-    this.bottomBlock = '';
-
-    // todo context
-    this.topContext = '-9px';
-    this.rightContext = '9px';
-
-  }
-
-  resetStyleForMobileAndTabs(): void { 
+  resetStyleForMobileAndTabsAndSmallDesctop(): void { 
     // todo block
     this.transformBlock = 'scale(0.7778)';
     this.flexDirectionBlock = 'column-reverse'
     this.justifyBlock = 'flex-start';
     this.topBlock = '';
-    this.rightBlock = '19px';
-    this.bottomBlock = '15px';
+    this.rightBlock = '18px';
+    this.bottomBlock = '18px';
 
     // todo context
     this.topContext = '9px';
