@@ -14,7 +14,6 @@ export class InputImgComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.list);
     
   }
 

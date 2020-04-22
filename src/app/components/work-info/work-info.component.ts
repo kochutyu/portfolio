@@ -16,7 +16,6 @@ export class WorkInfoComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    // console.log(this.workInfo);
   }
 
 }

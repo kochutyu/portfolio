@@ -27,7 +27,6 @@ export class LargeDesctopComponent implements OnInit, AfterViewInit {
   ) { }
 
   ngOnInit(): void {
-    console.log(this.activeNav);
     
    }
 

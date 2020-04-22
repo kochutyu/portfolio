@@ -34,8 +34,6 @@ export class AppComponent implements OnInit {
   
   @HostListener('window:scroll', ['$event']) onScroll(event) {
     this.windowS.scroll = window.pageYOffset;
-    console.log(this.windowS.scroll);
-    
   }
 
   ngOnInit(): void {
@@ -43,14 +41,11 @@ export class AppComponent implements OnInit {
       let filter = works.map(work => {
         return work.payload.doc.data().filter
       });
-      // console.log("FILTER ARR", filter);
       const lengthFilterArr = filter.length;
       filter.forEach((items, i) => {
         filter = filter.concat(items);
       });
-      // console.log("FILTER STR", filter);
       filter = filter.splice(lengthFilterArr, filter.length - lengthFilterArr)
-      // console.log("FILTER ONLY STR", filter);
       let filters = [];
       filter.forEach(items => {
         const itemFilter: string = filter.find(item => item === items); // save filter
@@ -63,9 +58,6 @@ export class AppComponent implements OnInit {
 
         filter = filter.filter(item => item !== items);
       });
-
-      console.log(filter);
-      console.log(filters);
       this.filterS.filters = filters;
 
 

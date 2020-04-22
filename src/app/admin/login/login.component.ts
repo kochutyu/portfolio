@@ -12,7 +12,7 @@ import { FirestoreService } from 'src/app/shared/services/firestore.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  
+
   form: FormGroup;
   submitted: boolean;
   adminSub: Subscription;
@@ -34,18 +34,17 @@ export class LoginComponent implements OnInit {
       login: this.form.value.login,
       password: this.form.value.password,
     }
-    
+
     this.adminSub = this.fireS.getCollection('admin').subscribe(res => {
-      console.log(this.authS.ADMIN);
 
       const admin: IUser = res.map(item => {
         return {
           ...item.payload.doc.data(),
           id: item.payload.doc.id
         }
-      }).find( (item: IUser) => item.login === user.login && item.password === user.password )
+      }).find((item: IUser) => item.login === user.login && item.password === user.password)
       this.authS.ADMIN = admin;
-      console.log(this.authS.ADMIN);
+      
       localStorage.setItem('admin', JSON.stringify(admin));
       this.submitted = false;
       this.authS.logIn();
