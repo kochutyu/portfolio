@@ -42,7 +42,6 @@ export class WorkComponent implements OnInit, OnDestroy {
       date: this.cardPrewviewS.work.date,
     }
     const id = this.route.snapshot.params['id'];
-    console.log(id);
     
     const allWorks = this.cardPrewviewS.allWorks;
     this.cardPrewviewS.otherWorks = allWorks.filter((item: Work) => item.id !== this.cardPrewviewS.work.id);

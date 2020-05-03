@@ -52,7 +52,6 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    console.log(this.works);
 
     this.$worksSub = this.fireS.getCollection('works').subscribe(works => {
       this.cardPreviewS.allWorks = works.map(work => {

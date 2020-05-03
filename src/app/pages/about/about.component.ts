@@ -64,7 +64,6 @@ export class AboutComponent implements OnInit, OnDestroy {
     })
     this.aboutS.progressWorksNotFiltered = IProgressArr;
     this.aboutS.progressWorksFiltered = [];
-    console.log('PROGRESS', IProgressArr);
     this.aboutS.getProgressPercent();
   }
 }

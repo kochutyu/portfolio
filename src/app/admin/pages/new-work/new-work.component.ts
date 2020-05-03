@@ -80,7 +80,6 @@ export class NewWorkComponent implements OnInit {
     const workID = this.route.snapshot.params['id'];
     const work$ = this.fireS.getCollection('works').subscribe(works => {
       const work: Work = works.map(work => {
-        console.log(work.payload.doc.date);
         
         return {
           ...work.payload.doc.data(),
@@ -99,7 +98,6 @@ export class NewWorkComponent implements OnInit {
         filter: new FormControl(null, [Validators.required]),
       });
 
-      console.log(work.date);
 
       this.workInfo = {
         author: work.author,
@@ -192,7 +190,6 @@ export class NewWorkComponent implements OnInit {
       tags: this.newWorkS.tags,
       filter: this.newWorkS.filter
     }
-    console.log(this.work);
     this.form.reset();
     this.newWorkS.reset();
     this.fireS.setWork(this.work);
