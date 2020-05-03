@@ -44,6 +44,11 @@ import { FilterPipe } from './shared/pipes/filter.pipe';
 import { FilterSmallDesctopAndMobileTabComponent } from './components/navbar/filter-small-desctop-and-mobile-tab/filter-small-desctop-and-mobile-tab.component';
 import { ToastrModule } from 'ngx-toastr';
 
+import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
+import { faSquare, faCheckSquare } from '@fortawesome/free-solid-svg-icons';
+import { faSquare as farSquare, faCheckSquare as farCheckSquare } from '@fortawesome/free-regular-svg-icons';
+import { faStackOverflow, faGithub, faMedium, faInstagram, faFacebook, faLinkedin, faLinkedinIn, faTelegram, faTelegramPlane, faFacebookF } from '@fortawesome/free-brands-svg-icons';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -85,6 +90,7 @@ import { ToastrModule } from 'ngx-toastr';
     BrowserAnimationsModule,
     HttpClientModule,
     MatSliderModule,
+    FontAwesomeModule,
     NgxUiLoaderModule.forRoot(ngxUiLoaderConfig),
     NgxUiLoaderRouterModule,
     AngularFireModule.initializeApp(environment.configFire),
@@ -97,4 +103,8 @@ import { ToastrModule } from 'ngx-toastr';
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule { 
+  constructor(private library: FaIconLibrary) {
+    library.addIcons(faSquare, faCheckSquare, farSquare, farCheckSquare, faStackOverflow, faGithub, faMedium, faInstagram, faLinkedinIn, faTelegramPlane,faFacebookF);
+  }
+}

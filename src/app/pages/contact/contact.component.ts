@@ -11,7 +11,7 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent implements OnInit {
-  contactMe: string = 'Зворотный контакт зы мною'
+  contactMe: string = 'You can write me an e-mail that I will read and will reply to.'
 
   form: FormGroup;
 
