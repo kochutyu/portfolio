@@ -31,7 +31,7 @@ export class AuthService {
   loginToAdmin(): void {
     const getAdmin: IUser = JSON.parse(localStorage.getItem('admin'));
     if (getAdmin) {
-      this.router.navigate(['/admin', 'new-work']);
+      this.router.navigate(['/admin', 'all-works']);
       this.activeNav = this.adminNav;
       this.auth = true;
     }

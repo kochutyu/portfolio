@@ -58,7 +58,8 @@ export class HomeComponent implements OnInit, OnDestroy {
       this.cardPreviewS.allWorks = works.map(work => {
         return {
           ...work.payload.doc.data(),
-          id: work.payload.doc.id
+          id: work.payload.doc.id,
+          date: work.payload.doc.data().date.toDate()
         };
       })
       localStorage.setItem('allWorks', JSON.stringify(this.cardPreviewS.allWorks));

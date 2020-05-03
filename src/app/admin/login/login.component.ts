@@ -44,10 +44,14 @@ export class LoginComponent implements OnInit {
         }
       }).find((item: IUser) => item.login === user.login && item.password === user.password)
       this.authS.ADMIN = admin;
+
+      if (admin) { 
+        this.router.navigate(['admin', 'all-works']);
+        localStorage.setItem('admin', JSON.stringify(admin));
+        this.authS.logIn();
+      }
       
-      localStorage.setItem('admin', JSON.stringify(admin));
       this.submitted = false;
-      this.authS.logIn();
       this.form.reset();
       this.adminSub.unsubscribe();
     })

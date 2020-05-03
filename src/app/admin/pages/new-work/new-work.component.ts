@@ -80,9 +80,12 @@ export class NewWorkComponent implements OnInit {
     const workID = this.route.snapshot.params['id'];
     const work$ = this.fireS.getCollection('works').subscribe(works => {
       const work: Work = works.map(work => {
+        console.log(work.payload.doc.date);
+        
         return {
           ...work.payload.doc.data(),
-          id: work.payload.doc.id
+          id: work.payload.doc.id,
+          date: work.payload.doc.data().date.toDate()
         }
       }).find((work: Work) => work.id === workID);
 
@@ -96,7 +99,14 @@ export class NewWorkComponent implements OnInit {
         filter: new FormControl(null, [Validators.required]),
       });
 
-      this.work.date = work.date;
+      console.log(work.date);
+
+      this.workInfo = {
+        author: work.author,
+        date: work.date,
+      }
+      
+      
       this.newWorkS.sliderImgURL = work.sliderImgURL;
       this.newWorkS.tags = work.tags;
       this.newWorkS.projectFeatures = work.projectFeatures;
@@ -186,6 +196,7 @@ export class NewWorkComponent implements OnInit {
     this.form.reset();
     this.newWorkS.reset();
     this.fireS.setWork(this.work);
+    this.router.navigate(['/admin', 'all-works']);
   }
 
   update(): void {
