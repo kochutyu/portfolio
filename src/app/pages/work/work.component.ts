@@ -31,13 +31,16 @@ export class WorkComponent implements OnInit, OnDestroy {
     public cardPrewviewS: CardPreviewService,
   ) { }
   ngOnDestroy(): void {
-    this.cardPrewviewS.$otherWorksSub.unsubscribe();
   }
 
   ngOnInit(): void {
+    this.cardPrewviewS.work = JSON.parse(localStorage.getItem('work'));
+    this.cardPrewviewS.workInfo = {
+      author: this.cardPrewviewS.work.author,
+      date: this.cardPrewviewS.work.date,
+    }
   }
-  showMoreWorks() { }
 
-  
+
 
 }

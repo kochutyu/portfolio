@@ -50,6 +50,7 @@ export class CardPreviewComponent implements OnInit, OnDestroy {
   ) { }
   ngOnDestroy(): void {
     // this.$worksSub.unsubscribe();
+    // localStorage.removeItem('work');
   }
 
   ngOnInit(): void {
@@ -62,8 +63,10 @@ export class CardPreviewComponent implements OnInit, OnDestroy {
     else {
       this.router.navigate(['/work', work.id]);
       this.id = work.id;
-      this.getWorkPageData();
     }
+    this.cardPrewviewS.work = work;
+    console.log('this.cardPrewviewS.work: ', this.cardPrewviewS.work);
+    localStorage.setItem('work', JSON.stringify(work));
   }
 
   id: string;
@@ -71,41 +74,41 @@ export class CardPreviewComponent implements OnInit, OnDestroy {
   works: Work[];
   $worksSub: Subscription;
 
-  getWorkPageData(): void {
-    const data = () => {
-      this.$worksSub = this.fireS.getCollection('works').subscribe(works => {
-        this.work = works.map(work => {
-          return {
-            ...work.payload.doc.data(),
-            id: work.payload.doc.id
-          };
-        }).find(work => work.id === this.id);
+  // getWorkPageData(): void {
+  //   const data = () => {
+  //     this.$worksSub = this.fireS.getCollection('works').subscribe(works => {
+  //       this.work = works.map(work => {
+  //         return {
+  //           ...work.payload.doc.data(),
+  //           id: work.payload.doc.id
+  //         };
+  //       }).find(work => work.id === this.id);
 
-        this.works = works.map(work => {
-          return {
-            ...work.payload.doc.data(),
-            id: work.payload.doc.id
-          };
-        }).filter(work => work.id !== this.id);
+  //       this.works = works.map(work => {
+  //         return {
+  //           ...work.payload.doc.data(),
+  //           id: work.payload.doc.id
+  //         };
+  //       }).filter(work => work.id !== this.id);
 
-        this.cardPrewviewS.work = this.work;
-        this.cardPrewviewS.otherWorks = this.works;
-        this.cardPrewviewS.workInfo = {
-          author: this.cardPrewviewS.work.author,
-          date: this.cardPrewviewS.work.date,
-        }
+  //       this.cardPrewviewS.work = this.work;
+  //       this.cardPrewviewS.otherWorks = this.works;
+  //       this.cardPrewviewS.workInfo = {
+  //         author: this.cardPrewviewS.work.author,
+  //         date: this.cardPrewviewS.work.date,
+  //       }
 
-      })
-      this.cardPrewviewS.$otherWorksSub = this.$worksSub;
-    }
+  //     })
+  //     this.cardPrewviewS.$otherWorksSub = this.$worksSub;
+  //   }
 
-    if (this.cardPrewviewS.otherWorkVisited) {
-      data();
-    } else {
-      data();
-      this.cardPrewviewS.otherWorkVisited = true;
-    }
-  }
+  //   if (this.cardPrewviewS.otherWorkVisited) {
+  //     data();
+  //   } else {
+  //     data();
+  //     this.cardPrewviewS.otherWorkVisited = true;
+  //   }
+  // }
 
 
 

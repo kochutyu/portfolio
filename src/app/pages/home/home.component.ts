@@ -17,6 +17,7 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit, OnDestroy {
+  works: Work[];
   widthBlock: string;
   heightBlock: string;
   $worksSub: Subscription;
@@ -46,7 +47,6 @@ export class HomeComponent implements OnInit, OnDestroy {
     public windowS: UserWindowService
   ) { }
   ngOnDestroy(): void {
-    this.$worksSub.unsubscribe();
   }
 
   ngOnInit(): void {
@@ -63,7 +63,6 @@ export class HomeComponent implements OnInit, OnDestroy {
 
 
   }
-  works: Work[];
 
 
 }
