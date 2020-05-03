@@ -31,6 +31,7 @@ export class WorkComponent implements OnInit, OnDestroy {
     public cardPrewviewS: CardPreviewService,
   ) { }
   ngOnDestroy(): void {
+    localStorage.removeItem('work');
   }
 
   ngOnInit(): void {
@@ -40,7 +41,11 @@ export class WorkComponent implements OnInit, OnDestroy {
       author: this.cardPrewviewS.work.author,
       date: this.cardPrewviewS.work.date,
     }
-    this.cardPrewviewS.otherWorks = this.cardPrewviewS.allWorks.filter( item => JSON.stringify(item) !== localStorage.getItem('work'))
+    const id = this.route.snapshot.params['id'];
+    console.log(id);
+    
+    const allWorks = this.cardPrewviewS.allWorks;
+    this.cardPrewviewS.otherWorks = allWorks.filter((item: Work) => item.id !== this.cardPrewviewS.work.id);
   }
 
 
