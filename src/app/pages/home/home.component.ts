@@ -9,6 +9,7 @@ import { Work } from 'src/app/shared/interface/interfaces';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { FirestoreService } from 'src/app/shared/services/firestore.service';
 import { trigger, state, style, animate, transition } from '@angular/animations';
+import { CardPreviewService } from 'src/app/shared/services/card-preview.service';
 
 
 @Component({
@@ -44,7 +45,8 @@ export class HomeComponent implements OnInit, OnDestroy {
     private http: HttpClient,
     public contactInfoS: ContactInformationService,
     private fireS: FirestoreService,
-    public windowS: UserWindowService
+    public windowS: UserWindowService,
+    public cardPreviewS: CardPreviewService
   ) { }
   ngOnDestroy(): void {
   }
@@ -53,12 +55,13 @@ export class HomeComponent implements OnInit, OnDestroy {
     console.log(this.works);
 
     this.$worksSub = this.fireS.getCollection('works').subscribe(works => {
-      this.works = works.map(work => {
+      this.cardPreviewS.allWorks = works.map(work => {
         return {
           ...work.payload.doc.data(),
           id: work.payload.doc.id
         };
       })
+      localStorage.setItem('allWorks', JSON.stringify(this.cardPreviewS.allWorks));
     })
 
 

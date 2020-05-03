@@ -35,10 +35,12 @@ export class WorkComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.cardPrewviewS.work = JSON.parse(localStorage.getItem('work'));
+    this.cardPrewviewS.allWorks = JSON.parse(localStorage.getItem('allWorks'));
     this.cardPrewviewS.workInfo = {
       author: this.cardPrewviewS.work.author,
       date: this.cardPrewviewS.work.date,
     }
+    this.cardPrewviewS.otherWorks = this.cardPrewviewS.allWorks.filter( item => JSON.stringify(item) !== localStorage.getItem('work'))
   }
 
 

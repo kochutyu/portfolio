@@ -22,6 +22,8 @@ export class CardPreviewService {
   otherWorks: Work[];
   $otherWorksSub: Subscription;
 
+  allWorks: Work[];
+
   workInfo: IWorkInfo = {
     author: this.work.author,
     date: this.work.date,
