@@ -28,7 +28,7 @@ export class ContactComponent implements OnInit {
     }
   ]
   constructor(
-    public windowsS: UserWindowService,
+    public windowS: UserWindowService,
     private http: HttpClient,
     private toastr: ToastrService
   ) { }

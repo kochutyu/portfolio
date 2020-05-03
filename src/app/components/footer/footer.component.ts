@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserWindowService } from 'src/app/shared/services/user-window.service';
 
 @Component({
   selector: 'app-footer',
@@ -9,7 +10,9 @@ export class FooterComponent implements OnInit {
 
   date: Date = new Date;
 
-  constructor() { }
+  constructor(
+    public windowS: UserWindowService
+  ) { }
 
   ngOnInit(): void {
   }

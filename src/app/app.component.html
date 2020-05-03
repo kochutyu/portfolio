@@ -1,13 +1,12 @@
-
 <main class="main">
-    <div class="navbar">
-        <app-navbar></app-navbar>
-    </div>
-    <div [ngClass]="{
+  <div class="navbar">
+    <app-navbar></app-navbar>
+  </div>
+  <div [ngClass]="{
         'content': true,
         'fixed': windowS.scroll>1 && windowS.width<1113
     }">
-        <router-outlet></router-outlet>
-    </div>
-     <ngx-ui-loader></ngx-ui-loader>
+    <router-outlet></router-outlet>
+  </div>
+  <ngx-ui-loader></ngx-ui-loader>
 </main>

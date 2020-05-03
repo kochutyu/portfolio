@@ -1,4 +1,4 @@
-<div class="container" *ngIf="windowsS.width >= 600">
+<div class="container" *ngIf="windowS.width >= 600">
   <div class="contact p25">
     <div class="contact-form p25">
       <div class="get-info-contact mb30">
@@ -7,7 +7,7 @@
       </div>
       <div class="send-form">
         <h1 class="mtop-25 mbottom-25">Send us a message</h1>
-        <form action="" *ngIf="windowsS.width > 1300; else largeDesctop" [formGroup]="form" (ngSubmit)="submit()">
+        <form action="" *ngIf="windowS.width > 1300; else largeDesctop" [formGroup]="form" (ngSubmit)="submit()">
           <div class="grid">
             <div class="col-1">
               <div class="form-control">
@@ -78,11 +78,13 @@
 
     </div>
   </div>
-
+  <div class="hr-social" *ngIf="windowS.width >=1113 && windowS.width < 1300">
+    <app-footer></app-footer>
+  </div>
 </div>
 
 
-<div class="container" *ngIf="windowsS.width < 600">
+<div class="reset-container" *ngIf="windowS.width < 600">
   <div class="contact-form">
     <div class="get-info-contact mb30">
       <h1 class="mb10">Get in touch with us</h1>
@@ -123,5 +125,8 @@
             MESSAGE</span></button>
       </form>
     </div>
+  </div>
+  <div class="hr-social" *ngIf="windowS.width >=1113 && windowS.width < 1300">
+    <app-footer></app-footer>
   </div>
 </div>

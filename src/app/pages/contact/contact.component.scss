@@ -53,6 +53,7 @@
   }
 
 }
+
 .grid-small-desctop {
   display: grid;
   grid-template-columns: 1fr;
@@ -107,6 +108,14 @@
   }
 }
 
-.mt{
+.mt {
   margin-top: 29px;
+}
+
+.reset-container {
+  display: flex;
+  justify-content: center;
+  height: calc(100vh - 70px);
+  width: 100%;
+  padding: 0;
 }

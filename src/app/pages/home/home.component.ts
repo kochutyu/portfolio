@@ -42,7 +42,8 @@ export class HomeComponent implements OnInit, OnDestroy {
     public homeS: HomeService,
     private http: HttpClient,
     public contactInfoS: ContactInformationService,
-    private fireS: FirestoreService
+    private fireS: FirestoreService,
+    public windowS: UserWindowService
   ) { }
   ngOnDestroy(): void {
     this.$worksSub.unsubscribe();

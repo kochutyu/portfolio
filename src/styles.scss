@@ -122,6 +122,7 @@ p {
     padding: 25px;
     background-color: #fff;
   }
+
 }
 
 .center {
@@ -359,3 +360,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.hr-social {
+  border-top: 1px solid #202426;
+  padding-top: 25px;
+  margin-top: 25px;
+}

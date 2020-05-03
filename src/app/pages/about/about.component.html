@@ -17,6 +17,9 @@
       {{aboutS.about.descriptionAbout}}
     </p>
   </div>
+  <div class="hr-social" *ngIf="windowS.width >=1113 && windowS.width < 1300">
+    <app-footer></app-footer>
+  </div>
 </div>
 
 <div class="container" *ngIf="windowS.width < 1113 && windowS.width >=600">
@@ -31,6 +34,9 @@
       {{aboutS.about.descriptionAbout}}
     </p>
   </div>
+  <div class="hr-social" *ngIf="windowS.width >=1113 && windowS.width < 1300">
+    <app-footer></app-footer>
+  </div>
 </div>
 
 <div class="container" *ngIf="windowS.width < 600">
@@ -42,6 +48,9 @@
     <p class="mtop-25">
       {{aboutS.about.descriptionAbout}}
     </p>
+  </div>
+  <div class="hr-social" *ngIf="windowS.width >=1113 && windowS.width < 1300">
+    <app-footer></app-footer>
   </div>
 </div>
 
