@@ -60,7 +60,8 @@
             </div>
             <div [ngClass]="{'col-2': true,'error': form.get('text').touched && form.get('text').invalid}">
               <textarea name="" id="" placeholder="type text ..." formControlName="text"></textarea>
-              <div class="errors" *ngIf="form.get('text').touched && form.get('text').invalid">
+              <div class="errors" *ngIf="form.get('text').touched && form.get('text').invalid"
+                [ngStyle]="{'bottom': '7px'}">
                 <span class="err" *ngIf="form.get('text').errors.required">
                   This field is requared.
                 </span>
@@ -109,7 +110,8 @@
                 </span>
               </div>
               <div [ngClass]="{'col-2': true, 'mtop-25': true,'error': form.get('text').touched && form.get('text').invalid}">
-                <textarea name="" id="" placeholder="type text ..." formControlName="text" [ngStyle]="{'width': 'calc(100% - 21px)'}"></textarea>
+                <textarea name="" id="" placeholder="type text ..." formControlName="text"
+                  [ngStyle]="{'width': 'calc(100% - 21px)', 'bottom': '7px'}"></textarea>
                 <div class="errors" *ngIf="form.get('text').touched && form.get('text').invalid">
                   <span class="err" *ngIf="form.get('text').errors.required">
                     This field is requared.
@@ -184,7 +186,7 @@
             <textarea name="" id="" placeholder="type text ..." formControlName="text"></textarea>
           </div>
           <div class="errors" *ngIf="form.get('text').touched && form.get('text').invalid"
-            [ngStyle]="{'bottom': '2px'}">
+            [ngStyle]="{'bottom': '4px'}">
             <span class="err" *ngIf="form.get('text').errors.required">
               This field is requared.
             </span>
