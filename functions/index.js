@@ -12,8 +12,8 @@ admin.initializeApp();
 let transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: 'kochutyura@gmail.com',
-    pass: 'xgmxpwnamfbizmoq'
+    user: 'kochutyurawork@gmail.com',
+    pass: 'ecmqxxvmekmsvovw'
   }
 });
 
