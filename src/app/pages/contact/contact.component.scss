@@ -119,3 +119,15 @@
   width: 100%;
   padding: 0;
 }
+
+.error input,
+.error textarea {
+  border: 2px solid red;
+}
+.errors{
+  position: relative;
+  bottom: 4px;
+}
+.err{
+  color: red;
+}

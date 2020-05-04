@@ -12,11 +12,21 @@
             <div class="col-1">
               <div class="form-control">
                 <div class="logo-before">
-                  <div class="logo">
+                  <div [ngClass]="{
+                    'logo': true
+                  }">
                     <img src="./assets/img/components/pages/contact/user.png" alt="">
                   </div>
-                  <div class="input">
+                  <div class="input" [ngClass]="{
+                    'input': true,
+                    'error': form.get('user').touched && form.get('user').invalid
+                  }">
                     <input type="text" placeholder="user" formControlName="user">
+                    <div class="errors" *ngIf="form.get('user').touched && form.get('user').invalid">
+                      <span class="err" *ngIf="form.get('user').errors.required">
+                        This field is requared.
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -25,18 +35,36 @@
                   <div class="logo">
                     <img src="./assets/img/components/pages/contact/email.png" alt="">
                   </div>
-                  <div class="input">
+                  <div [ngClass]="{
+                    'input': true,
+                    'error': form.get('email').touched && form.get('email').invalid
+                  }">
                     <input type="text" placeholder="email" formControlName="email">
+                    <div class="errors" *ngIf="form.get('email').touched && form.get('email').invalid">
+                      <span class="err" *ngIf="form.get('email').errors.required">
+                        This field is requared.
+                      </span>
+                      <span class="err" *ngIf="form.get('email').errors.email">
+                        Please enter email in format test@gmsil.com.
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
               <div class="mt">
-                <button class="btn" [ngStyle]="{'width': '100%', 'height': '50px'}" [disabled]="form.invalid || submited" (click)="submit()"><span>SEND
+                <button class="btn" [ngStyle]="{'width': '100%', 'height': '50px'}"
+                  [disabled]="form.invalid || submited" (click)="submit()"><span>SEND
                     MESSAGE</span></button>
+
               </div>
             </div>
-            <div class="col-2">
+            <div [ngClass]="{'col-2': true,'error': form.get('text').touched && form.get('text').invalid}">
               <textarea name="" id="" placeholder="type text ..." formControlName="text"></textarea>
+              <div class="errors" *ngIf="form.get('text').touched && form.get('text').invalid">
+                <span class="err" *ngIf="form.get('text').errors.required">
+                  This field is requared.
+                </span>
+              </div>
             </div>
           </div>
         </form>
@@ -49,27 +77,47 @@
                     <div class="logo">
                       <img src="./assets/img/components/pages/contact/user.png" alt="">
                     </div>
-                    <div class="input">
+                    <div [ngClass]="{'input': true, 'error': form.get('user').touched && form.get('user').invalid}">
                       <input type="text" placeholder="user" formControlName="user">
                     </div>
                   </div>
                 </div>
+                 <div class="errors" *ngIf="form.get('user').touched && form.get('user').invalid"
+                   [ngStyle]="{'bottom': '-2px', 'padding-left':'50px'}">
+                   <span class="err" *ngIf="form.get('user').errors.required">
+                     This field is requared.
+                   </span>
+                 </div>
                 <div class="form-control mtop-25">
                   <div class="logo-before">
                     <div class="logo">
                       <img src="./assets/img/components/pages/contact/email.png" alt="">
                     </div>
-                    <div class="input">
+                    <div [ngClass]="{'input': true, 'error': form.get('email').touched && form.get('email').invalid}">
                       <input type="text" placeholder="email" formControlName="email">
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="col-2 mbottom-25 mtop-25">
-                <textarea name="" id="" placeholder="type text ..." formControlName="text"></textarea>
+              <div class="errors" *ngIf="form.get('email').touched && form.get('email').invalid"
+                [ngStyle]="{'bottom': '-2px', 'padding-left':'50px'}">
+                <span class="err" *ngIf="form.get('email').errors.required">
+                  This field is requared.
+                </span>
+                <span class="err" *ngIf="form.get('email').errors.email">
+                  Please enter email in format test@gmsil.com.
+                </span>
+              </div>
+              <div [ngClass]="{'col-2': true, 'mtop-25': true,'error': form.get('text').touched && form.get('text').invalid}">
+                <textarea name="" id="" placeholder="type text ..." formControlName="text" [ngStyle]="{'width': 'calc(100% - 21px)'}"></textarea>
+                <div class="errors" *ngIf="form.get('text').touched && form.get('text').invalid">
+                  <span class="err" *ngIf="form.get('text').errors.required">
+                    This field is requared.
+                  </span>
+                </div>
               </div>
             </div>
-            <button class="btn" [ngStyle]="{'width': '100%', 'height': '50px'}" [disabled]="form.invalid || submited"
+            <button class="btn mtop-25" [ngStyle]="{'width': '100%', 'height': '50px'}" [disabled]="form.invalid || submited"
               (click)="submit()"><span>SEND
                 MESSAGE</span></button>
           </form>
@@ -92,7 +140,7 @@
     </div>
     <div class="send-form">
       <h1 class="mtop-25 mbottom-25">Send us a message</h1>
-      <form action="" [formGroup]="form">
+      <form action="" [formGroup]="form" (ngSubmit)="submit()">
         <div class="grid-small-desctop">
           <div class="col-1">
             <div class="form-control">
@@ -100,27 +148,49 @@
                 <div class="logo">
                   <img src="./assets/img/components/pages/contact/user.png" alt="">
                 </div>
-                <div class="input">
+                <div [ngClass]="{'input': true, 'error': form.get('user').touched && form.get('user').invalid}">
                   <input type="text" placeholder="user" formControlName="user">
                 </div>
               </div>
+            </div>
+            <div class="errors" *ngIf="form.get('user').touched && form.get('user').invalid" [ngStyle]="{'bottom': '-2px', 'padding-left':'50px'}">
+              <span class="err" *ngIf="form.get('user').errors.required">
+                This field is requared.
+              </span>
             </div>
             <div class="form-control mtop-25">
               <div class="logo-before">
                 <div class="logo">
                   <img src="./assets/img/components/pages/contact/email.png" alt="">
                 </div>
-                <div class="input">
+                <div [ngClass]="{'input': true, 'error': form.get('email').touched && form.get('email').invalid}">
                   <input type="text" placeholder="email" formControlName="email">
                 </div>
               </div>
             </div>
           </div>
-          <div class="col-2 mbottom-25 mtop-25">
+          <div class="errors" *ngIf="form.get('email').touched && form.get('email').invalid"
+            [ngStyle]="{'bottom': '-2px', 'padding-left':'50px'}">
+            <span class="err" *ngIf="form.get('email').errors.required">
+              This field is requared.
+            </span>
+            <span class="err" *ngIf="form.get('email').errors.email">
+              Please enter email in format test@gmsil.com.
+            </span>
+          </div>
+          <div
+           [ngClass]="{'col-2': true, 'mtop-25': true, 'error': form.get('text').touched &&
+           form.get('text').invalid}">
             <textarea name="" id="" placeholder="type text ..." formControlName="text"></textarea>
           </div>
+          <div class="errors" *ngIf="form.get('text').touched && form.get('text').invalid"
+            [ngStyle]="{'bottom': '2px'}">
+            <span class="err" *ngIf="form.get('text').errors.required">
+              This field is requared.
+            </span>
+          </div>
         </div>
-        <button class="btn" [ngStyle]="{'width': '100%', 'height': '50px'}" [disabled]="form.invalid || submited"
+        <button class="btn mtop-25" [ngStyle]="{'width': '100%', 'height': '50px'}" [disabled]="form.invalid || submited"
           (click)="submit()"><span>SEND
             MESSAGE</span></button>
       </form>
