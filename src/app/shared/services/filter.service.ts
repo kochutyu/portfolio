@@ -14,7 +14,6 @@ export class FilterService {
   getIndex(): number{
     const filterWorkIndex: number = this.filters.findIndex((item) => this.filter.includes(item));
     this.activeItem = this.filter;
-    console.log(filterWorkIndex);
     
     return filterWorkIndex
   }
