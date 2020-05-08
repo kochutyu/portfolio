@@ -10,6 +10,14 @@ import { Work } from '../interface/interfaces';
 export class FilterService {
   filters: string[] = [];
   filter: string = "All works";
+  activeItem: string;
+  getIndex(): number{
+    const filterWorkIndex: number = this.filters.findIndex((item) => this.filter.includes(item));
+    this.activeItem = this.filter;
+    console.log(filterWorkIndex);
+    
+    return filterWorkIndex
+  }
   constructor(
     private firestore: AngularFirestore
   ) { }

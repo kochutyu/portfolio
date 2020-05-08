@@ -70,6 +70,8 @@ export class CardPreviewComponent implements OnInit, OnDestroy {
       this.cardPrewviewS.otherWorks = allWorks.filter((item: Work) => item.id !== work.id);
     }
     this.cardPrewviewS.work = work;
+    this.filterS.filter = 'All works';
+    console.log('LOG', this.filterS.getIndex());
     localStorage.setItem('work', JSON.stringify(work));
   }
 

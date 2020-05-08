@@ -26,6 +26,7 @@ export class FilterComponent implements OnInit {
 
   activeItem: string = '';
   activeRadio: boolean;
+  index: number;
 
   constructor(
     public filterS: FilterService,
@@ -35,12 +36,15 @@ export class FilterComponent implements OnInit {
   }
 
   ngOnInit() {
+    
   }
 
   thisItem(item): void {
-    this.activeItem = item.target.value;
+    this.filterS.activeItem = item.target.value;
     this.filterS.filter = item.target.value;
     this.activeRadio = true;
+    console.log(this.activeItem);
+    
     
     if (JSON.parse(localStorage.getItem('auth'))) {
       this.router.navigate(['/admin', 'all-works']);

@@ -3,9 +3,11 @@
 
     <div class="filter-item-column">
       <label
-        [ngClass]="{'unselectable': true, 'active-first-radio': i === 0 && !activeRadio, 'active-radio': item === activeItem}"
+        [ngClass]="{'unselectable': true, 'active-first-radio': i === 0 && !activeRadio,
+        'active-radio': item === filterS.activeItem}"
         *ngFor="let item of filterS.filters; let i = index" [for]="i" (click)="filterWorks()">
-        <input type="radio" [value]="item" name="item" [id]="i" [checked]="i === 0" (change)="thisItem($event)">
+        <input type="radio" [value]="item" name="item" [id]="i" [checked]="filterS.getIndex() === 0"
+          (change)="thisItem($event)">
         {{item}}
       </label>
     </div>
